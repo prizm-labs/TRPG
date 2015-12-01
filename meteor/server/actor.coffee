@@ -25,16 +25,18 @@ ActionTypes =
 
 class Effect
   valueGenerators: []
+  defenses: []
   lastValue: null
   type: null
   subtype: null
   description: ""
 
-  constructor: (valueGenerators,type,subtype,description)->
+  constructor: (valueGenerators,type,subtype,description,defenses)->
     @valueGenerators = valueGenerators
     @type = type
     @subtype = subtype
     @description = description
+    @defenses = defenses
 
   presentResolution: (value)->
     # manual resolution
@@ -61,6 +63,7 @@ class Action
   description: ""
   target: null,
   targetType: null
+  duration: 6
 
   constructor: (effects,range,targeting,type,description)->
     @effects = effects
@@ -69,10 +72,14 @@ class Action
     @description = description
 
 
+  showTargetRange: ()->
+
   areaOfEffect: ()-> 1
 
   setTarget: (target)->
     @target = target
+
+    #TODO distinguish between single, multiple, AoE
 
   resolve: ()->
 
@@ -87,8 +94,89 @@ class Action
         else null
       )
 
+class MovementAction extends Action
+
+  #gridType: square or hex
+
+  constructor: ()->
+
+  showTargetRange: ()->
 
 
+  setTarget: ()-> #currentXCoordinate
+
+  resolve: ()->
+
+
+
+class Grid
+
+  tileWidth: 0
+  tileHeight: 0
+  tiles: []
+
+  constructor: (tileType,tileHeight,tileWidth,heightByTile,widthByTile)->
+    @tileWidth = tileWidth
+    @tileHeight = tileHeight
+
+    if tileType=="square"
+      for x in [0...widthByTile]
+        for y in [0...heightByTile]
+          @tiles.push(new Tile(x,y))
+
+
+  getTile: (x,y)-> _.findWhere(@tiles,{x:x,y:y})
+
+
+  getRangeAroundCoordinate: (x,y,range)->
+    # restrict to orthagonal movement
+    coordinates = []
+    conjugates = []
+    # [0,0]
+
+    origin = [x,y]
+
+    getAllConjugatesAtRange = (range)->
+      difference = 0
+      conjugates = []
+      while difference<range
+        conjugates.push [range-difference,difference]
+        conjugates.push [difference,range-difference] if difference!=range-difference
+        difference++
+
+      return conjugates
+
+    for r in [0...range]
+      conjugates = conjugates.concat getAllConjugatesAtRange(r+1)
+
+    translations = []
+
+    for pair in conjugates
+      translations.push pair
+      translations.push [-pair[0],pair[1]] if pair[0]!=0
+      translations.push [-pair[0],-pair[1]] if pair[1]!=0 && pair[0]!=0
+      translations.push [pair[0],-pair[1]] if pair[1]!=0
+
+    console.log(translations)
+
+    for move in translations
+      target = [origin[0]+move[0],origin[1]+move[1]]
+      coordinates.push target if target[0]>=0 && target[1]>=0
+      #TODO other conditions to invalidate coordinate
+      #coordinate is occupied by an actor
+      #coordinate is impassable terrain/object
+
+    console.log(coordinates)
+
+    return coordinates
+
+
+class Tile
+  x: null
+  y: null
+  constructor: (x,y)->
+    @x = x
+    @y = y
 
 class Actor
 
@@ -100,6 +188,7 @@ class Actor
   currentMap: null
   currentXCoordinate: null
   currentYCoordinate: null
+  grid: null
   sizeX: 0
   sizeY: 0
   actions: {}
@@ -183,7 +272,7 @@ class TurnTracker
 class Session
   constructor: ()->
 
-
+@Grid = Grid
 @Actor = Actor
 @TurnTracker = TurnTracker
 @Effect = Effect

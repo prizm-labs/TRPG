@@ -1,5 +1,12 @@
-Roll =
-  d20: (dice)-> Math.floor(Math.random()*20)
+Roll = (dieCount,dieType)->
+  sum = 0
+  rolls = []
+  for count in [0...dieCount]
+    roll=Math.floor(Math.random()*dieType)+1
+    rolls.push roll
+    sum+=roll
+  console.log(rolls)
+  return sum
 
 ActorTypes =
   player: 0
@@ -36,20 +43,51 @@ class Effect
 
   resolve: (modifier,multiplier)->
     # automatic resolution
-    _.each(@valueGenerators,(vg)->
-      lastValue+=vg.dieType*vg.dieCount
-      )
-    return @lastValue * multiplier?multiplier:1 + modifier
+    @lastValue = 0
+
+    _.each(@valueGenerators,(vg)=>
+      console.log vg
+      # @lastValue += Roll(vg.dieCount,vg.dieType) * multiplier ? 1 + vg.modifier
+      @lastValue += Roll(vg.dieCount,vg.dieType) + vg.modifier
+      console.log @lastValue
+    )
+    # return @lastValue + modifier ? 0
+    return @lastValue
 
 class Action
   effects: []
   range: 0,
   type: null
-  areaOfEffect: ()-> 1
-  constructor: (effects,range,targeting,type)->
+  description: ""
+  target: null,
+  targetType: null
+
+  constructor: (effects,range,targeting,type,description)->
     @effects = effects
     @range = range
     @type = type
+    @description = description
+
+
+  areaOfEffect: ()-> 1
+
+  setTarget: (target)->
+    @target = target
+
+  resolve: ()->
+
+    resolveDamage = (effect)->
+      console.log @target.hitPoints
+      @target.hitPoints-=effect.resolve()
+      console.log @target.hitPoints
+
+    _.each(@effects,(effect)=>
+      switch effect.type
+        when "damage" then resolveDamage.call(@,effect)
+        else null
+      )
+
+
 
 
 class Actor
@@ -66,6 +104,7 @@ class Actor
   sizeY: 0
   actions: {}
   stats: {}
+  currentAction: null
 
   constructor: (name,movementSpeed,hitPoints,type,stats)->
     @type = type
@@ -86,6 +125,17 @@ class Actor
 
   addAction: (key, action)->
     @actions[key] = action
+
+  selectAction: (key)->
+    @currentAction = @actions[key] if @actions[key]
+
+  unselectAction: ()->
+    @currentAction = null
+
+  showActions: ()->
+    _.each(@actions,(action)->
+      console.log(action.description)
+      )
 
   randomizeInitiative: ()->
     @setIntiative Roll.d20 1
@@ -133,9 +183,6 @@ class TurnTracker
 class Session
   constructor: ()->
 
-
-class Action
-  constructor: ()->
 
 @Actor = Actor
 @TurnTracker = TurnTracker

@@ -18,22 +18,27 @@ enemy = new Actor("goblin",40,10,ActorTypes.enemy)
 enemy2 = new Actor("goblin",40,10,ActorTypes.enemy)
 enemy3 = new Actor("goblin",40,10,ActorTypes.enemy)
 
-greatswordDamageEffect = new Effect([{dieCount:2,dieValue:6,modifier:4}],"damage","slashing")
-greatswordAction = new Action([greatswordDamageEffect],5,1,ActionTypes.normal)
+greatswordDamageEffect = new Effect([{dieCount:2,dieType:6,modifier:4}],"damage","slashing")
+greatswordAction = new Action([greatswordDamageEffect],5,1,ActionTypes.normal,"Attack with greatsword")
 
-player.addAction(greatswordAction)
+player.addAction("greatsword",greatswordAction)
+player.showActions()
 
-participants = [player,player2,player3,enemy,enemy2,enemy3]
+player.selectAction("greatsword")
+player.currentAction.setTarget(enemy)
+player.currentAction.resolve()
 
-_.each(participants,(participant,index)->
-  participant.randomizeInitiative()
-  tracker.addParticipant(participant)
-  )
-
-tracker.begin()
-tracker.advanceTurn()
-tracker.advanceTurn()
-tracker.advanceTurn()
-tracker.advanceTurn()
-tracker.advanceTurn()
-tracker.advanceTurn()
+# participants = [player,player2,player3,enemy,enemy2,enemy3]
+#
+# _.each(participants,(participant,index)->
+#   participant.randomizeInitiative()
+#   tracker.addParticipant(participant)
+#   )
+#
+# tracker.begin()
+# tracker.advanceTurn()
+# tracker.advanceTurn()
+# tracker.advanceTurn()
+# tracker.advanceTurn()
+# tracker.advanceTurn()
+# tracker.advanceTurn()

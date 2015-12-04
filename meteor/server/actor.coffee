@@ -19,6 +19,7 @@ ActionTypes =
   normal: 0
   bonus: 1
   reaction: 2
+  movement: 3
 
 @ActionTypes = ActionTypes
 @ActorTypes = ActorTypes
@@ -63,7 +64,8 @@ class Action
   description: ""
   target: null,
   targetType: null
-  duration: 6
+  duration: 6,
+  actor: null
 
   constructor: (effects,range,targeting,type,description)->
     @effects = effects
@@ -98,10 +100,17 @@ class MovementAction extends Action
 
   #gridType: square or hex
 
-  constructor: ()->
+  constructor: (range)->
+    super([],range,1,ActionTypes.movement,"Move character at regular speed")
+
+
+  setRange: (range)->
+    @range = range
 
   showTargetRange: ()->
-
+    origin = [@actor.currentTile.x,@actor.currentTile.y]
+    range = @actor.grid.
+    return @actor.grid.getRangeAroundCoordinate(origin[0],origin[1])
 
   setTarget: ()-> #currentXCoordinate
 
@@ -113,20 +122,27 @@ class Grid
 
   tileWidth: 0
   tileHeight: 0
+  tileUnit: 0
   tiles: []
 
-  constructor: (tileType,tileHeight,tileWidth,heightByTile,widthByTile)->
-    @tileWidth = tileWidth
-    @tileHeight = tileHeight
+  constructor: (tileType,tileUnit,heightByTile,widthByTile)->
+
+    @tileUnit = tileUnit
 
     if tileType=="square"
+      @tileWidth = tileUnit
+      @tileHeight = tileUnit
+
       for x in [0...widthByTile]
         for y in [0...heightByTile]
           @tiles.push(new Tile(x,y))
 
+    else if tileType=="hex"
+
 
   getTile: (x,y)-> _.findWhere(@tiles,{x:x,y:y})
 
+  getRangeByTile: (speed)-> speed/@tileUnit
 
   getRangeAroundCoordinate: (x,y,range)->
     # restrict to orthagonal movement
@@ -182,12 +198,12 @@ class Actor
 
   type: null
   initiative: 0
-  movement: 0
+  movementSpeed: 0
+  availableMovement: 0
   hitPoints: 0
   name: null
   currentMap: null
-  currentXCoordinate: null
-  currentYCoordinate: null
+  currentTile: null
   grid: null
   sizeX: 0
   sizeY: 0
@@ -195,10 +211,12 @@ class Actor
   stats: {}
   currentAction: null
 
+
   constructor: (name,movementSpeed,hitPoints,type,stats)->
     @type = type
     @name = name
     @movementSpeed = movementSpeed
+    @availableMovement = movementSpeed
     @hitPoints = hitPoints
     @stats = stats
 
@@ -206,14 +224,15 @@ class Actor
     console.log(@name,@movementSpeed)
 
   setMapCoordinate: (x,y)->
-    @currentXCoordinate = x
-    @currentYCoordinate = y
+    @currentTile = @grid.getTile(x,y)
 
   setIntiative: (value)->
     @initiative = value
 
   addAction: (key, action)->
-    @actions[key] = action
+    _action = _.cloneDeep(action)
+    @actions[key] = _action
+    _action.actor = @
 
   selectAction: (key)->
     @currentAction = @actions[key] if @actions[key]
@@ -227,7 +246,7 @@ class Actor
       )
 
   randomizeInitiative: ()->
-    @setIntiative Roll.d20 1
+    @setIntiative Roll(1,20)
 
 class TurnTracker
   constructor:(@type)->
@@ -269,8 +288,12 @@ class TurnTracker
       )
     console.log @turnOrder
 
+
 class Session
   constructor: ()->
+
+
+
 
 @Grid = Grid
 @Actor = Actor

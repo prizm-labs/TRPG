@@ -25,6 +25,8 @@ enemy3 = new Actor("goblin",40,10,ActorTypes.enemy)
 player.grid = grid
 player.setMapCoordinate(0,0)
 
+movementAction = new MovementAction(30)
+
 # p257 PH
 magicMissleEffect = new Effect([{dieCount:1,dieType:4,modifier:1}],"damage","magic")
 magicMissileAction = new Action([magicMissleEffect,magicMissleEffect,magicMissleEffect],
@@ -38,6 +40,7 @@ greatswordDamageEffect = new Effect([{dieCount:2,dieType:6,modifier:4}],"damage"
 greatswordAction = new Action([greatswordDamageEffect],5,1,ActionTypes.normal,"Attack with greatsword")
 
 player.addAction("greatsword",greatswordAction)
+player.addAction("movement",movementAction)
 player.showActions()
 
 player.selectAction("greatsword")

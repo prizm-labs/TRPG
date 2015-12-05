@@ -129,15 +129,20 @@ class Grid
 
     @tileUnit = tileUnit
 
-    if tileType=="square"
+    generateSquareGrid = (tiles)->
       @tileWidth = tileUnit
       @tileHeight = tileUnit
 
       for x in [0...widthByTile]
         for y in [0...heightByTile]
-          @tiles.push(new Tile(x,y))
+          tiles.push(new Tile(x,y))
 
-    else if tileType=="hex"
+    generateHexGrid = (tiles)->
+
+    switch tileType
+      when "square" then generateSquareGrid(@tiles)
+      when "hex" then generateHexGrid(@tiles)
+
 
 
   getTile: (x,y)-> _.findWhere(@tiles,{x:x,y:y})
@@ -230,7 +235,7 @@ class Actor
     @initiative = value
 
   addAction: (key, action)->
-    _action = _.cloneDeep(action)
+    _action = _.clone(action,true)
     @actions[key] = _action
     _action.actor = @
 
@@ -300,3 +305,4 @@ class Session
 @TurnTracker = TurnTracker
 @Effect = Effect
 @Action = Action
+@MovementAction = MovementAction

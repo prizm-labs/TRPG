@@ -26,6 +26,7 @@ player.grid = grid
 player.setMapCoordinate(0,0)
 
 movementAction = new MovementAction(30)
+console.log movementAction
 
 # p257 PH
 magicMissleEffect = new Effect([{dieCount:1,dieType:4,modifier:1}],"damage","magic")

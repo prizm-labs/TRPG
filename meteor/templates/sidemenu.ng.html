@@ -16,6 +16,7 @@
       <ion-list>
         <ion-item ng-repeat="task in Tasks | filter:{project: activeProject()._id}">
           {{task.title}}
+          <img src="reindeer.png">
         </ion-item>
       </ion-list>
     </ion-content>

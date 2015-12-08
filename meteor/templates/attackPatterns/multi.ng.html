@@ -1,0 +1,26 @@
+  <ion-modal-view class="product edit create">
+    <ion-content>
+      <div class="list">
+        <div class="item item-divider">
+          Your Selected Units are: {{multiSelected}}
+        </div>
+        <ion-list>
+          <div class="item item-divider" ng-repeat="target in availableTargets">
+            <ion-item>
+              <img ng-src={{target.imgSrc}} alt="oopsies" height=50 width=50>
+                 <label class="checkbox">
+                    <div><input type="checkbox" ng-click="toggleMultiSelected(target.name)"></div>
+                </label>
+              <strong> {{target.name}} </strong>     HP: {{target.hp}}
+            </ion-item>
+          </div>
+        </ion-list>
+      </div>
+
+      <div id="finalize">
+       <button class="button button-outline button-assertive" ng-click="LaunchAttack()">
+         Finalize Attack!!
+       </button>
+     </div>
+    </ion-content>
+  </ion-modal-view>

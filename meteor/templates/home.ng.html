@@ -1,0 +1,25 @@
+<ion-view view-title="Attacks" ng-controller="SpellTabCtrl as STC">
+  <ion-content class="padding">
+
+  <table border="1">
+  <tr>
+  <td>
+    <p>
+      <div>This is your portrait:</div>
+      <img src="img/rogue_portrait.jpg" alt="oopsies" height="180" width="160">
+    </p>
+  </td>
+  <td>
+    <div class="row" ng-repeat="spell in spells">
+      <div class="col"><img ng-src={{spell.imgSrc}} alt="rogue_portrait" height=100 width=100></div>
+      <div class="col col-75"><a class="button icon icon-right ion-chevron-right" ng-click="openModal(spell.targetingPattern)">
+      <strong> {{spell.name}} </strong> <br>
+        Damage: {{spell.damage}} Targeting Type: <i>{{spell.targetingPattern}} </i>
+      </a></div>
+    </div>
+  </td>
+  </tr>
+  </table>
+
+  </ion-content>
+</ion-view>

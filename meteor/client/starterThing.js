@@ -1,39 +1,6 @@
 
-  var app = angular.module('app.example', [
-    'angular-meteor',
-    'ui.router',
-    'ionic',
-    'ngCordova.plugins.datePicker']);
 
-  function onReady() {
-    angular.bootstrap(document, ['app.example'], {strictDi: true});
-  }
-
-  if (Meteor.isCordova) {
-    angular.element(document).on("deviceready", onReady);
-  }
-  else {
-    angular.element(document).ready(onReady);
-  }
-
-
-  app.config(['$urlRouterProvider', '$stateProvider',
-    function($urlRouterProvider, $stateProvider){
-
-    $urlRouterProvider.otherwise("/tabs");
-
-    $stateProvider
-      .state('tabs', {
-        url : '/tabs',
-        templateUrl: 'templates/sidemenu.ng.html',
-        controller: 'TodoCtrl'
-      });
-  }]);
-
-
-  // subscribe to the two collections we use
-  Meteor.subscribe('Projects');
-  Meteor.subscribe('Tasks');
+  /*
 
   app.controller('TodoCtrl', ['$scope', '$meteor', '$meteorCollection', '$ionicModal', '$rootScope', '$ionicSideMenuDelegate', '$ionicPopup', '$cordovaDatePicker',
     function ($scope, $meteor, $meteorCollection, $ionicModal, $rootScope, $ionicSideMenuDelegate, $ionicPopup, $cordovaDatePicker) {
@@ -157,4 +124,6 @@
         });
       }
     }
+
   ]);
+*/

@@ -67,21 +67,33 @@ app.controller('SpellTabCtrl', function($scope, $ionicModal) {
             ];
   $scope.availableTargets = [
     {'name':'Jason Statham', 'hp':'trillions', 'imgSrc':'img/jason.jpg', 'selected':false},
-    {'name':'Bill', 'hp':10, 'imgSrc':'img/batman.jpg', 'selected':false},
+    {'name':'Billford Billiams', 'hp':10, 'imgSrc':'img/batman.jpg', 'selected':false},
     {'name':'Sparky the WonderDog', 'hp':79, 'imgSrc':'img/sparky.jpg', 'selected':false},
   ];
 
   $scope.selected = {
-    'name':'bill'
+    'name':'Billford Billiams'
   };
 
-  $scope.possibleTargets = 2;
+
+  $scope.possibleTargets = 2; //the number of targets this spell can target
+
 
   $scope.toggleMultiSelected = function(targetName) {
     for (var i = 0; i < $scope.availableTargets.length; i++) {
       if ($scope.availableTargets[i].name == targetName)
       {
-        $scope.availableTargets[i].selected = !$scope.availableTargets[i].selected;
+        if ($scope.availableTargets[i].selected == true) {
+          $scope.availableTargets[i].selected = false;
+          $scope.possibleTargets++;
+
+        } else if ( $scope.availableTargets[i].selected == false && $scope.possibleTargets < 1 ) {
+          jQuery(".list").effect("shake", {times:4}, 20);  //shake the list if they try to select more
+
+        } else {  //if the target is not currently selected
+          $scope.availableTargets[i].selected = true;
+          $scope.possibleTargets--;
+        }
       }
     }
     console.log("have toggled: " + targetName);
@@ -141,6 +153,7 @@ app.controller('SpellTabCtrl', function($scope, $ionicModal) {
     //put the meteor call here
     console.log("launching attack!");
 
+    //clean up variables
     for (var i = 0; i < $scope.availableTargets.length; i++) {  //clear the selected targets
       console.log($scope.availableTargets[i].name + " is: " + $scope.availableTargets[i].selected);
       $scope.availableTargets[i].selected = false;
@@ -158,6 +171,59 @@ app.controller('SpellTabCtrl', function($scope, $ionicModal) {
     }
     $scope.closeModal();
   }
+});
+
+app.controller("PlayerCtrl", function($scope) {
+  $scope.playerHP = 30;
+  $scope.playerMP = 35;
+  $scope.playerName = "Gandalf";
+  $scope.playerClass = "Rogue";
+
+  $scope.ChangeHP = function(newValue) {
+    $scope.playerHP = newValue;
+    jQuery('.healthMeter').val($scope.playerHP).trigger('change');
+  }
+
+  $scope.ChangeMP = function(newValue) {
+    $scope.playerMP = newValue;
+    jQuery('.manaMeter').val($scope.playerMP).trigger('change');
+  }
+
+
+  jQuery(".meter").knob({
+    'change' : function(v) {console.log(v);},
+    'readOnly' : true
+  });
+
+  jQuery('.healthMeter').trigger(
+    'configure',
+    {
+        "min":0,
+        "max":100,
+        "fgColor":"#66CC66",
+        "angleOffset":-125,
+        "angleArc":250,
+        "displayInput":true,
+        "readOnly":true
+    }
+  );
+  jQuery('.healthMeter').val($scope.playerHP).trigger('change');
+
+  jQuery('.manaMeter').trigger(
+    'configure',
+    {
+        "min":0,
+        "max":100,
+        "fgColor":"#0000C4",
+        "angleOffset":-125,
+        "angleArc":250,
+        "displayInput":true,
+        "readOnly":true
+    }
+  );
+  jQuery('.manaMeter').val($scope.playerMP).trigger('change');
+
+
 });
 
 app.controller('LineAttkCtrl', function($scope, $ionicModal) {

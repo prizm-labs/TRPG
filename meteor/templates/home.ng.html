@@ -1,61 +1,37 @@
 <ion-view view-title="Attacks" ng-controller="SpellTabCtrl as STC">
-  <ion-content class="padding">
-    <table border="1">
+  <ion-content>
+    <table border="1" cellpadding="100">
       <tr>
-        <td>
+        <td ng-controller="PlayerCtrl">
           <div class="row">
             <div class="col text-center">
-              <p style="font-size:45px"> <strong> Gandalf </strong> </p>
+              <p style="font-size:45px"> <strong> {{playerName}} </strong></p>
             </div>
           </div>
           <div class="row">
             <div class="col text-center">
-              <p style="font-size:20px"> <strong>Rogue</strong> </p>
+              <p style="font-size:20px"> <strong> {{playerClass}} </strong> </p>
             </div>
           </div>
-          <div style="position:relative;width:350px;margin:auto;left:10px">
+
+          <div class="col" style="position:relative;width:350px;margin:auto;left:10px">
             <div style="position:absolute;left:10px;top:10px">
-              <input class="knob healthMeter" data-min="0" data-max="24" data-bgColor="#333" data-fgColor="#66CC66" data-displayInput=false data-width="300" data-height="300" data-thickness=".3">
+              <input class="meter healthMeter" data-bgColor="#333" data-fgColor="#66CC66" data-displayInput=false data-width="300" data-height="300" data-thickness=".3">
             </div>
             <div style="position:absolute;left:60px;top:60px">
-              <input class="knob manaMeter" data-min="0" data-max="60" data-bgColor="#333" data-displayInput=false data-width="200" data-height="200" data-thickness=".45">
+              <input class="meter manaMeter" data-bgColor="#333" data-displayInput=false data-width="200" data-height="200" data-thickness=".45">
             </div>
             <div style="position:absolute;left:110px;top:110px">
               <img src="img/rogue_portrait.jpg" alt="oopsies" height="180" width="160" class="portrait">
             </div>
           </div>
-          <script>
-          jQuery(".knob").knob();
-            jQuery(".healthMeter").knob();
-            jQuery('.healthMeter').trigger(
-              'configure',
-              {
-                  "min":0,
-                  "max":100,
-                  "fgColor":"#66CC66",
-                  "angleOffset":-125,
-                  "angleArc":250,
-                  "displayInput":true,
-                  "readOnly":true
-              }
-            );
-            jQuery('.healthMeter').val(88).trigger('change');
 
-            jQuery(".manaMeter").knob();
-            jQuery('.manaMeter').trigger(
-              'configure',
-              {
-                  "min":0,
-                  "max":100,
-                  "fgColor":"#0000C4",
-                  "angleOffset":-125,
-                  "angleArc":250,
-                  "displayInput":true,
-                  "readOnly":true
-              }
-            );
-            jQuery('.manaMeter').val(35).trigger('change');
-          </script>
+          <div class="row" style="background:#A9A9A9;margin-top:220px">
+            <div class="col text-center" style="background:blanchedalmond">
+              Health: {{playerHP}} <br>
+              Mana: {{playerMP}}
+            </div>
+          </div>
         </td>
         <td width="100%">
           <div class="row" ng-repeat="spell in spells | filter:filterSpells">

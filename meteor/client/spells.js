@@ -173,6 +173,19 @@ app.controller('SpellTabCtrl', function($scope, $ionicModal) {
   }
 });
 
+app.controller("MapPointCtrl", function($scope, $ionicModal) {
+
+      console.log("map point ctrl runs");
+      jQuery( "#selectable" ).selectable({
+        selected: function(event, ui) {
+            alert("Selected");
+        },
+        selecting: function(event, ui) {
+            alert("Selecting");
+        }
+      });
+});
+
 app.controller("PlayerCtrl", function($scope) {
   $scope.playerHP = 30;
   $scope.playerMP = 35;

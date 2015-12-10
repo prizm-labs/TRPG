@@ -4,7 +4,6 @@ var app = angular.module('combatApp', [
   'ionic',
   'ngCordova.plugins.datePicker']);
 
-
 function onReady() {
   angular.bootstrap(document, ['combatApp'], {strictDi: true});
 }
@@ -20,11 +19,6 @@ else {
   angular.element(document).ready(onReady);
 }
 
-
-
-
-
-
 app.config(function($stateProvider, $urlRouterProvider) {
 
   $stateProvider
@@ -39,22 +33,6 @@ app.config(function($stateProvider, $urlRouterProvider) {
         'home-tab': {
           templateUrl: "templates/home.ng.html",
           controller: 'SpellTabCtrl'
-        }
-      }
-    })
-    .state('tabs.facts', {
-      url: "/facts",
-      views: {
-        'home-tab': {
-          templateUrl: "templates/facts.ng.html"
-        }
-      }
-    })
-    .state('tabs.facts2', {
-      url: "/facts2",
-      views: {
-        'home-tab': {
-          templateUrl: "templates/facts2.ng.html"
         }
       }
     })
@@ -78,9 +56,8 @@ app.config(function($stateProvider, $urlRouterProvider) {
 
 });
 
+//main controller
 app.controller('SpellTabCtrl', function($scope, $ionicModal) {
-  console.log('SpellTabCtrl');
-
 
   $scope.spells = [{'name': "Hello Kitty", 'damage': 3, 'imgSrc':"img/rogue_portrait.jpg", 'targetingPattern':'single'},
               {'name': "Dunkey Roll", 'damage': 'millions', 'imgSrc':'img/bullsh.jpg', 'targetingPattern':'angle'},
@@ -88,7 +65,6 @@ app.controller('SpellTabCtrl', function($scope, $ionicModal) {
               {'name': "Benson Turnover", 'damage': 38, 'imgSrc':'img/rogue_portrait.jpg', 'targetingPattern':'line'},
               {'name': "Home Alone 6", 'damage': 40, 'imgSrc':'img/rogue_portrait.jpg', 'targetingPattern':'multi'}
             ];
-
   $scope.availableTargets = [
     {'name':'Jason Statham', 'hp':'trillions', 'imgSrc':'img/jason.jpg', 'selected':false},
     {'name':'Bill', 'hp':10, 'imgSrc':'img/batman.jpg', 'selected':false},
@@ -98,6 +74,8 @@ app.controller('SpellTabCtrl', function($scope, $ionicModal) {
   $scope.selected = {
     'name':'bill'
   };
+
+  $scope.possibleTargets = 2;
 
   $scope.toggleMultiSelected = function(targetName) {
     for (var i = 0; i < $scope.availableTargets.length; i++) {
@@ -126,7 +104,9 @@ app.controller('SpellTabCtrl', function($scope, $ionicModal) {
         $scope.modal.show();
 
         jQuery(".angleTargeting").knob({
-          'change' : function(v) { console.log(v); }
+          'change' : function(newValue) {
+            console.log(newValue);
+          }
         });
         jQuery('.angleTargeting').trigger(
           'configure',
@@ -142,7 +122,7 @@ app.controller('SpellTabCtrl', function($scope, $ionicModal) {
               "cursor":30
           }
         );
-        jQuery('.angleTargeting').val(50);
+        jQuery('.angleTargeting').val(50).trigger('change');
       });
 
 

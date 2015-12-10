@@ -9,6 +9,10 @@ function onReady() {
   angular.bootstrap(document, ['combatApp'], {strictDi: true});
 }
 
+// subscribe to the two collections we use
+Meteor.subscribe('Projects');
+Meteor.subscribe('Tasks');
+
 if (Meteor.isCordova) {
   angular.element(document).on("deviceready", onReady);
 }
@@ -18,9 +22,7 @@ else {
 
 
 
-// subscribe to the two collections we use
-Meteor.subscribe('Projects');
-Meteor.subscribe('Tasks');
+
 
 
 app.config(function($stateProvider, $urlRouterProvider) {
@@ -72,14 +74,6 @@ app.config(function($stateProvider, $urlRouterProvider) {
         }
       }
     })
-    .state('tabs.contact', {
-      url: "/contact",
-      views: {
-        'contact-tab': {
-          templateUrl: "templates/contact.ng.html"
-        }
-      }
-    });
    $urlRouterProvider.otherwise("/tab/home");
 
 });
@@ -130,85 +124,35 @@ app.controller('SpellTabCtrl', function($scope, $ionicModal) {
       }).then(function(modal) {
         $scope.modal = modal;
         $scope.modal.show();
+
+        jQuery(".healthMeter").knob();
+        jQuery('.healthMeter').trigger(
+          'configure',
+          {
+              "width":200,
+              "min":10,
+              "max":100,
+              "fgColor":"#66CC66",
+              "angleOffset":-125,
+              "angleArc":250,
+              "displayInput":true,
+              "value":50
+          }
+        );
       });
 
-      if (targetingPattern == "angle" && !this.angleHandlerSet) {
-        this.angleHandlerSet = true;
-        $scope.$on('modal.shown', function(event, modal) {
-          console.log("angle is the modal!!");
-            var width = 1000;
-            var height = 600;
-            var canvas = ctx = false;
-            var frameRate = 1/40; // Seconds
-            var frameDelay = frameRate * 1000; // ms
-            var loopTimer = false;
-
-            var center = {x: width / 2, y: height / 2};
-
-            var mouse = {x: 0, y: 0, isDown: false};
-
-            function getMousePosition(e) {
-                mouse.x = e.pageX - canvas.offsetLeft;
-                mouse.y = e.pageY - canvas.offsetTop;
-            }
-            var mouseDown = function(e) {
-                if (e.which == 1) {
-                    getMousePosition(e);
-                    mouse.isDown = true;
-                }
-            }
-            var mouseUp = function(e) {
-                if (e.which == 1) {
-                    mouse.isDown = false;
-                    $scope.finalizeAngleAttack = true;
-                    console.log("moused up: " + $scope.finalizeAngleAttack);
-                }
-            }
-
-            var setup = function() {
-                canvas = document.getElementById("canvas");
-                ctx = canvas.getContext("2d");
-
-                //set up handlers
-                canvas.onmousemove = getMousePosition;
-                canvas.onmousedown = mouseDown;
-                canvas.onmouseup = mouseUp;
-
-                ctx.fillStyle = 'red';
-                ctx.lineWidth=10;
-                ctx.strokeStyle = '#000000';
-                loopTimer = setInterval(loop, frameDelay);
-            }
-
-            var loop = function() {
-              if (mouse.isDown) ctx.clearRect(0,0,width,height);
-              //draw red ball
-              ctx.save();
-              ctx.translate(center.x, center.y);
-              ctx.beginPath();
-              ctx.arc(0, 0, 20, 0, Math.PI*2, true);
-              ctx.fill();
-              ctx.closePath();
-              ctx.restore();
-
-              if (mouse.isDown) {
-                ctx.beginPath();
-                ctx.moveTo(center.x, center.y);
-                ctx.lineTo(mouse.x - 331, mouse.y - 200);
-                ctx.stroke();
-                ctx.closePath();
-              }
-            }
-
-            setup();
-        });
-      }
 
     console.log(targetingPattern);
   }
+
   $scope.closeModal = function(){
     $scope.modal.hide();
   }
+
+  $scope.filterSpells = function (obj, idx){
+    return !((obj._index = idx) % 2); //2 columns of spells
+  }
+
   $scope.LaunchAttack = function() {
     //put the meteor call here
     console.log("launching attack!");
@@ -217,6 +161,56 @@ app.controller('SpellTabCtrl', function($scope, $ionicModal) {
       console.log($scope.availableTargets[i].name + " is: " + $scope.availableTargets[i].selected);
       $scope.availableTargets[i].selected = false;
     }
+    $scope.closeModal();
+  }
+
+  $scope.CancelAttack = function() {
+    //put the meteor call here
+    console.log("canceling Attack");
+
+    for (var i = 0; i < $scope.availableTargets.length; i++) {  //clear the selected targets
+      console.log($scope.availableTargets[i].name + " is: " + $scope.availableTargets[i].selected);
+      $scope.availableTargets[i].selected = false;
+    }
+    $scope.closeModal();
+  }
+});
+
+app.controller('LineAttkCtrl', function($scope, $ionicModal) {
+  $scope.classUp = "unselectedDirection";
+  $scope.classDown = "unselectedDirection";
+  $scope.classLeft = "unselectedDirection";
+  $scope.classRight = "unselectedDirection";
+
+  $scope.ChooseAttack = function(chosen) {
+    $scope.classUp = "unselectedDirection";
+    $scope.classDown = "unselectedDirection";
+    $scope.classLeft = "unselectedDirection";
+    $scope.classRight = "unselectedDirection";
+
+    switch (chosen) {
+      case "chooseUp":
+        $scope.classUp == "unselectedDirection" ? $scope.classUp = "selectedDirection" : $scope.classUp = "unselectedDirection";
+        break;
+      case "chooseDown":
+        $scope.classDown == "unselectedDirection" ? $scope.classDown = "selectedDirection" : $scope.classDown = "unselectedDirection";
+        break;
+      case "chooseLeft":
+        $scope.classLeft == "unselectedDirection" ? $scope.classLeft = "selectedDirection" : $scope.classLeft = "unselectedDirection";
+        break;
+      case "chooseRight":
+        $scope.classRight == "unselectedDirection" ? $scope.classRight = "selectedDirection" : $scope.classRight = "unselectedDirection";
+        break;
+      default:
+        console.log("chosen direction not one of {up, down, left, right}");
+        break;
+    }
+  }
+
+  $scope.LaunchAttack = function() {
+    //put the meteor call here
+    console.log("launching attack, special for LINESSS");
+    //throw in the chosen direction here
     $scope.closeModal();
   }
 });

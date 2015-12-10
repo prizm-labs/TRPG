@@ -4,18 +4,46 @@
   <table border="1">
   <tr>
   <td>
-    <p>
-      <div>This is your portrait:</div>
-      <img src="img/rogue_portrait.jpg" alt="oopsies" height="180" width="160">
-    </p>
+      <div>Your Class is: <strong>Rogue</strong></div>
+      <img class="healthMeter" value="75" src="img/rogue_portrait.jpg" alt="oopsies" height="180" width="160">
+      <script>
+      jQuery(function() {
+        jQuery(".healthMeter").knob();
+        jQuery('.healthMeter').trigger(
+          'configure',
+          {
+              "width":200,
+              "min":10,
+              "max":100,
+              "fgColor":"#66CC66",
+              "angleOffset":-125,
+              "angleArc":250,
+              "displayInput":true,
+              "value":50
+          }
+        );
+      });
+      </script>
   </td>
-  <td>
-    <div class="row" ng-repeat="spell in spells">
-      <div class="col"><img ng-src={{spell.imgSrc}} alt="rogue_portrait" height=100 width=100></div>
-      <div class="col col-75"><a class="button icon icon-right ion-chevron-right" ng-click="openModal(spell.targetingPattern)">
-      <strong> {{spell.name}} </strong> <br>
-        Damage: {{spell.damage}} Targeting Type: <i>{{spell.targetingPattern}} </i>
-      </a></div>
+  <td width="100%">
+    <div class="row" ng-repeat="spell in spells | filter:filterSpells">
+
+      <div class="col">
+        <a class="button button-block icon icon-right ion-chevron-right rust" ng-click="openModal(spell.targetingPattern)">
+          <img ng-src={{spell.imgSrc}} alt="rogue_portrait" height=100 width=100>
+          <strong> {{spell.name}} </strong> <br>
+          Damage: {{spell.damage}} Targeting Type: <i>{{spell.targetingPattern}} </i>
+        </a>
+      </div>
+
+      <div class="col" ng-show=spells[spell._index+1]>
+        <a class="button button-block icon icon-right ion-chevron-right rust" ng-click="openModal(spells[spell._index+1].targetingPattern)">
+          <img ng-src={{spells[spell._index+1].imgSrc}} alt="rogue_portrait" height=100 width=100>
+          <strong> {{spells[spell._index+1].name}} </strong> <br>
+          Damage: {{spells[spell._index+1].damage}} Targeting Type: <i>{{spells[spell._index+1].targetingPattern}} </i>
+        </a>
+      </div>
+
     </div>
   </td>
   </tr>

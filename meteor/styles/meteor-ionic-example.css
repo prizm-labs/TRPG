@@ -1,6 +1,16 @@
 /* app css stylesheet */
 
 
+
+.healthMeter {
+  border-radius: 25px;
+}
+
+.selectedDirection {
+  background: red;
+}
+
+
 #finalize {
   width: 100%;
   margin: 0 auto;
@@ -13,13 +23,7 @@
 }
 
 .rust {
-  position: relative;
-  left: 31.7%;
-  /* Yup, I'm cheating */
-  top: 80px;
-  padding: 48px 16px 4px;
   font-family: "Dorsa";
-  font-size: 64px;
   background: url("http://i.imgur.com/rA8mo.png") #331a0e;
   box-shadow: 0 4px 0 #171310, 0 0 0px black, 0 4px 8px black, inset 0 0 8px #331a0e, inset 0 0 1px #66331b, inset 0 -20px 80px #040404;
   border-radius: 4px;
@@ -31,7 +35,7 @@
   transition-duration: .2s;
   }
   .rust:hover {
-  top: 82px;
+  top: +2px;
   background: url("http://i.imgur.com/rA8mo.png") #804022;
   box-shadow: 0 2px 0 #171313, 0 0 6px #331a0e, 0 2px 8px black, inset 0 0 8px #66331b, inset 0 0 1px #66331b, inset 0 -10px 40px #040404, inset 0 -10px 60px black;
   color: #ff8044;
@@ -41,7 +45,7 @@
   transition-duration: 0.2s;
   }
   .rust:active {
-  top: 84px;
+  top: +4px;
   background: url("http://i.imgur.com/rA8mo.png") #b35a30;
   box-shadow: 0 1px 0 #171310, 0 0 6px #b35a30, 0 0 8px black, inset 0 0 8px #994d29, inset 0 0 1px #ff8044, inset 0 -10px 80px #040404, inset 0 -10px 80px black;
   color: #ff8044;

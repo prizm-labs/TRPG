@@ -1,11 +1,25 @@
   <ion-modal-view class="product edit create">
-  <div>
-  <canvas id="canvas" height="600" width="1000"> Hello Darkness, my old friend </canvas>
-  </div>
-  <div id="finalize" ng-show="finalizeAngleAttack">
-   <button class="button button-outline button-assertive" ng-click="LaunchAttack()">
-     Finalize Attack!!
-   </button>
+  <div class="col">
+    <div class="row" style="background:red">
+
+
+      <img class="healthMeter" value="75" src="img/rogue_portrait.jpg" alt="oopsies" height="180" width="160">
+
+    </div>
+
+
+    <div class="row" style="background:yellow">
+    </div>
+
+    <div id="finalize" class="row" ng-show="finalizeAngleAttack">
+      <button class="button button-outline button-positive" ng-click="CancelAttack()">
+        Cancel Attack
+      </button>
+     <button class="button button-outline button-assertive" ng-click="LaunchAttack()">
+       Finalize Attack!!
+     </button>
+    </div>
+
   </div>
 
   </ion-modal-view>

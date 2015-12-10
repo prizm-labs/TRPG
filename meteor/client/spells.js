@@ -125,20 +125,24 @@ app.controller('SpellTabCtrl', function($scope, $ionicModal) {
         $scope.modal = modal;
         $scope.modal.show();
 
-        jQuery(".healthMeter").knob();
-        jQuery('.healthMeter').trigger(
+        jQuery(".angleTargeting").knob({
+          'change' : function(v) { console.log(v); }
+        });
+        jQuery('.angleTargeting').trigger(
           'configure',
           {
               "width":200,
-              "min":10,
+              "min":0,
               "max":100,
-              "fgColor":"#66CC66",
+              "fgColor":"#222222",
               "angleOffset":-125,
+              "thickness":".5",
               "angleArc":250,
-              "displayInput":true,
-              "value":50
+              "value":50,
+              "cursor":30
           }
         );
+        jQuery('.angleTargeting').val(50);
       });
 
 

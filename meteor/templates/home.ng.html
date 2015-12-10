@@ -5,24 +5,25 @@
   <tr>
   <td>
       <div>Your Class is: <strong>Rogue</strong></div>
-      <img class="healthMeter" value="75" src="img/rogue_portrait.jpg" alt="oopsies" height="180" width="160">
+      <img class="healthMeter" ng-click="jquery('.healthMeter').val(50);console.log('hi mom');" value="75" src="img/rogue_portrait.jpg" alt="oopsies" height="180" width="160">
       <script>
-      jQuery(function() {
         jQuery(".healthMeter").knob();
         jQuery('.healthMeter').trigger(
           'configure',
           {
               "width":200,
-              "min":10,
+              "min":0,
               "max":100,
               "fgColor":"#66CC66",
               "angleOffset":-125,
               "angleArc":250,
               "displayInput":true,
-              "value":50
+              "value":50,
+              "readOnly":true
           }
         );
-      });
+        jQuery('.healthMeter').val(50).trigger('change');
+
       </script>
   </td>
   <td width="100%">

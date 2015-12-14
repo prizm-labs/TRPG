@@ -1,5 +1,9 @@
 /* app css stylesheet */
 
+.pane {
+  background-image: url("http://img04.deviantart.net/8224/i/2012/058/6/e/forest_background_painting_by_zombierobots-d4r84w0.jpg") no-repeat center center fixed;
+  background-size: cover;
+}
 
 
 .direction {

@@ -2,10 +2,10 @@
     <ion-content>
       <div class="list">
         <div class="item item-divider">
-          Your attack can hit up to <strong>{{possibleTargets}}</strong> more enemies.
+          <p font-size="20px"> You have <strong>{{possibleDamages}}</strong> more points of damage. </p>
         </div>
         <ion-list>
-          <div class="item item-divider" ng-repeat="target in availableTargets" ng-click="toggleMultiSelected(target.name)">
+          <div class="item item-divider" ng-repeat="target in availableTargets">
             <ion-item>
               <div class="row">
                 <div class="col col-10">
@@ -13,11 +13,22 @@
                 </div>
                 <div class="col col-10">
                   <label class="checkbox">
-                    <input type="checkbox" ng-model="target.selected" ng-click="toggleMultiSelected(target.name)">
+                    <input type="checkbox" disabled="disabled" ng-model="target.selected">
                   </label>
                 </div>
                 <div class="col col-center">
                   <strong> {{target.name}} </strong> <br> HP: {{target.hp}}
+                </div>
+                <div class="col col-10">
+                  <button class="button icon ion-minus-circled" ng-click="loseDamage(target.name)"> </button>
+                </div>
+                <div class="col">
+                  <label class="item item-input">
+                    <span class="input-label"> Allocated: <strong> {{target.allocated}} </strong> </span>
+                  </label>
+                </div>
+                <div class="col col-10">
+                  <button class="button icon ion-plus-circled" ng-click="addDamage(target.name)"> </button>
                 </div>
               </div>
             </ion-item>

@@ -66,9 +66,9 @@ app.controller('SpellTabCtrl', function($scope, $ionicModal) {
               {'name': "Home Alone 6", 'damage': 40, 'imgSrc':'img/rogue_portrait.jpg', 'targetingPattern':'multi'}
             ];
   $scope.availableTargets = [
-    {'name':'Jason Statham', 'hp':'trillions', 'imgSrc':'img/jason.jpg', 'selected':false},
-    {'name':'Billford Billiams', 'hp':10, 'imgSrc':'img/batman.jpg', 'selected':false},
-    {'name':'Sparky the WonderDog', 'hp':79, 'imgSrc':'img/sparky.jpg', 'selected':false},
+    {'name':'Jason Statham', 'hp':'trillions', 'imgSrc':'img/jason.jpg', 'selected':false, 'allocated':0},
+    {'name':'Billford Billiams', 'hp':10, 'imgSrc':'img/batman.jpg', 'selected':false, 'allocated':0},
+    {'name':'Sparky the WonderDog', 'hp':79, 'imgSrc':'img/sparky.jpg', 'selected':false, 'allocated':0},
   ];
 
   $scope.selected = {
@@ -76,23 +76,62 @@ app.controller('SpellTabCtrl', function($scope, $ionicModal) {
   };
 
 
-  $scope.possibleTargets = 2; //the number of targets this spell can target
+  $scope.possibleDamages = 2; //the number of targets this spell can target
 
+  $scope.addDamage = function(targetName) {
+    for (var i = 0; i < $scope.availableTargets.length; i++) {
+      if ($scope.availableTargets[i].name == targetName && $scope.possibleDamages > 0)
+      {
+        $scope.availableTargets[i].allocated = $scope.availableTargets[i].allocated + 1;
+        $scope.possibleDamages--;
+      }
+      if ($scope.availableTargets[i].allocated > 0)
+      {
+        $scope.availableTargets[i].selected = true;
+      }
+      if ($scope.availableTargets[i].allocated <= 0)
+      {
+        $scope.availableTargets[i].selected = false;
+      }
+
+    }
+  }
+  $scope.loseDamage = function(targetName) {
+
+    for (var i = 0; i < $scope.availableTargets.length; i++) {
+      if ($scope.availableTargets[i].name == targetName && $scope.availableTargets[i].allocated > 0)
+      {
+        $scope.availableTargets[i].allocated = $scope.availableTargets[i].allocated - 1;
+        $scope.possibleDamages++;
+      }
+      if ($scope.availableTargets[i].allocated > 0)
+      {
+        $scope.availableTargets[i].selected = true;
+      }
+      if ($scope.availableTargets[i].allocated <= 0)
+      {
+        $scope.availableTargets[i].selected = false;
+      }
+
+    }
+  }
 
   $scope.toggleMultiSelected = function(targetName) {
     for (var i = 0; i < $scope.availableTargets.length; i++) {
       if ($scope.availableTargets[i].name == targetName)
       {
-        if ($scope.availableTargets[i].selected == true) {
+        if ($scope.availableTargets[i].selected == true && $scope.availableTargets[i].allocated == 1) {
           $scope.availableTargets[i].selected = false;
-          $scope.possibleTargets++;
+          $scope.possibleDamages++;
+          $scope.availableTargets[i].allocated = 0;
 
-        } else if ( $scope.availableTargets[i].selected == false && $scope.possibleTargets < 1 ) {
+        } else if ( $scope.availableTargets[i].selected == false && $scope.possibleDamages < 1 ) {
           jQuery(".list").effect("shake", {times:4}, 20);  //shake the list if they try to select more
 
-        } else {  //if the target is not currently selected
+        } else if ($scope.availableTargets[i].selected == false){  //if the target is not currently selected
           $scope.availableTargets[i].selected = true;
-          $scope.possibleTargets--;
+          $scope.possibleDamages--;
+          $scope.availableTargets[i].allocated = $scope.availableTargets[i].allocated + 1;
         }
       }
     }

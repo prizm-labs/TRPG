@@ -1,0 +1,10 @@
+{
+  "name": "ionicmeteorpost",
+  "version": "0.0.1",
+  "dependencies": {
+    "ngCordova": "latest",
+    "jquery-ui":"1.11.4",
+    "jquery-knob": "1.2.12"
+  },
+  "private": true
+}

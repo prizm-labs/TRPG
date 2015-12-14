@@ -2,10 +2,10 @@ var app = angular.module('combatApp', [
   'angular-meteor',
   'ui.router',
   'ionic',
-  'ngCordova.plugins.datePicker']);
+'ngCordova']);
 
 function onReady() {
-  angular.bootstrap(document, ['combatApp'], {strictDi: true});
+  angular.bootstrap(document, ['combatApp']);
 }
 
 // subscribe to the two collections we use

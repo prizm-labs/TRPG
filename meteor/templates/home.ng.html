@@ -1,4 +1,4 @@
-<ion-view class="pane" style="background: url('http://wallpapercave.com/wp/jYqqRWg.jpg') no-repeat center center fixed;background-size:cover;" view-title="Attacks" ng-controller="SpellTabCtrl as STC">
+<ion-view class="pane" style="background: url('img/forest_background.jpg') no-repeat center center fixed;background-size:cover;" view-title="Attacks" ng-controller="SpellTabCtrl as STC">
   <ion-content>
     <table border="1" cellpadding="100">
       <tr>
@@ -14,7 +14,7 @@
             </div>
           </div>
 
-          <div class="col" style="position:relative;width:350px;margin:auto;left:10px">
+          <div class="col" style="position:relative;width:350px;margin:auto;left:10px;zoom:0.6;">
             <div style="position:absolute;left:10px;top:10px">
               <input class="meter healthMeter" data-bgColor="#333" data-fgColor="#66CC66" data-displayInput=false data-width="300" data-height="300" data-thickness=".3">
             </div>
@@ -26,30 +26,34 @@
             </div>
           </div>
 
-          <div class="row" style="background:#A9A9A9;margin-top:220px">
+          <div class="row" style="background:#A9A9A9;margin-top:150px">
             <div class="col text-center" style="background:blanchedalmond">
               Health: {{playerHP}} <br>
               Mana: {{playerMP}}
             </div>
           </div>
         </td>
-      </tr>
-        <tr>
+
         <td width="100%">
           <div class="row" ng-repeat="spell in spells | filter:filterSpells">
             <div class="col">
               <a class="button button-block icon icon-right ion-chevron-right rust" ng-click="openModal(spell.targetingPattern)">
                 <img ng-src={{spell.imgSrc}} alt="rogue_portrait" height=100 width=100>
                 <strong> {{spell.name}} </strong> <br>
-                Damage: {{spell.damage}} Targeting Type: <i>{{spell.targetingPattern}} </i>
+                Value: {{spell.effects[0].value.count}} x D{{spell.effects[0].value.die}} + {{spell.effects[0].value.mod}} <br>
+                Type: <i>{{spell.effects[0].types[0]}}: {{spell.effects[0].types[1]}}</i> <i ng-show="spell.effects[0].types[2]"> / {{spell.effects[0].types[2]}} </i>
+                <p ng-show="spell.effects[0].saving_throw"> Saving throw: {{spell.effects[0].saving_throw}} </p>
+                <p ng-show="spell.description"> Description: {{spell.description}} </p>
               </a>
             </div>
-
             <div class="col" ng-show=spells[spell._index+1]>
               <a class="button button-block icon icon-right ion-chevron-right rust" ng-click="openModal(spells[spell._index+1].targetingPattern)">
                 <img ng-src={{spells[spell._index+1].imgSrc}} alt="rogue_portrait" height=100 width=100>
                 <strong> {{spells[spell._index+1].name}} </strong> <br>
-                Damage: {{spells[spell._index+1].damage}} Targeting Type: <i>{{spells[spell._index+1].targetingPattern}} </i>
+                Value: {{spells[spell._index+1].effects[0].value.count}} x D{{spells[spell._index+1].effects[0].value.die}} + {{spells[spell._index+1].effects[0].value.mod}} <br>
+                Type: <i>{{spells[spell._index+1].effects[0].types[0]}}: {{spells[spell._index+1].effects[0].types[1]}}</i> <i ng-show="spells[spell._index+1].effects[0].types[2]"> / {{spells[spell._index+1].effects[0].types[2]}} </i>
+                <p ng-show="spells[spell._index+1].effects[0].saving_throw"> Saving throw: {{spells[spell._index+1].effects[0].saving_throw}} </p>
+                <p ng-show="spells[spell._index+1].description"> Description: {{spells[spell._index+1].description}} </p>
               </a>
             </div>
           </div>

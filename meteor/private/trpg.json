@@ -1,5 +1,5 @@
 {
-  "figure-placement":{
+  "figure_placement":{
     "map":"river1",
     "figures":[
       { "id":1,"position":[0,0] },
@@ -17,6 +17,8 @@
       "actions":[
         {
           "name":"Greatsword, Melee",
+          "imgSrc":"img/bullsh.jpg",
+          "targetingPattern":"single",
           "hit_modifier":8,
           "range":5,
           "target":1,
@@ -33,6 +35,8 @@
         },
         {
           "name":"Handaxe, Melee",
+          "imgSrc":"img/rogue_portrait.jpg",
+          "targetingPattern":"line",
           "hit_modifier":8,
           "range":5,
           "target":1,
@@ -49,6 +53,8 @@
         },
         {
           "name":"Handaxe, Ranged",
+          "imgSrc":"img/rogue_portrait.jpg",
+          "targetingPattern":"angle",
           "hit_modifier":8,
           "range":[20,60],
           "target":1,
@@ -56,7 +62,7 @@
           "effects":[
             {
               "types":["damage","physical","slashing"],
-              "value": {"count":1,"die":6,"mod":4},
+              "value": {"count":1,"die":6,"mod":4}
 
             }
           ]
@@ -170,7 +176,7 @@
           "effects":[
             {
               "types":["damage","physical","slashing"],
-              "value": {"count":1,"die":6,"mod":2},
+              "value": {"count":1,"die":6,"mod":2}
 
             }
           ]
@@ -205,7 +211,7 @@
           "effects":[
             {
               "types":["healing","magical"],
-              "value": {"count":3,"die":8,"mod":4},
+              "value": {"count":3,"die":8,"mod":4}
 
             }
           ]
@@ -242,6 +248,8 @@
         {
           "name":"Fire Touch",
           "id":"fire-touch",
+          "imgSrc":"img/rogue_portrait.jpg",
+          "targetingPattern":"angle",
           "hit_modifier":8,
           "range":5,
           "target":1,
@@ -284,7 +292,7 @@
           "effects":[
             {
               "types":["damage","acid"],
-              "value": {"count":11,"die":8,"auto":49,},
+              "value": {"count":11,"die":8,"auto":49},
               "classes":["breath"],
               "saving_throw":["DEX",14],
               "on_save":{"mult":0.5}
@@ -326,6 +334,5 @@
         }
       ]
     }
-  ],
-
+  ]
 }

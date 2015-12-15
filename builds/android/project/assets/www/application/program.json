@@ -1,0 +1,143 @@
+{
+  "format": "web-program-pre1",
+  "manifest": [
+    {
+      "path": "1cb581dbe29b140b6462fe5b9cfbcefc92ee1607.js",
+      "where": "client",
+      "type": "js",
+      "cacheable": true,
+      "url": "/1cb581dbe29b140b6462fe5b9cfbcefc92ee1607.js?meteor_js_resource=true",
+      "size": 1636729,
+      "hash": "1cb581dbe29b140b6462fe5b9cfbcefc92ee1607"
+    },
+    {
+      "path": "7aa3287ffda8c6058be246859936e32a6b288248.css",
+      "where": "client",
+      "type": "css",
+      "cacheable": true,
+      "url": "/7aa3287ffda8c6058be246859936e32a6b288248.css?meteor_css_resource=true",
+      "size": 193339,
+      "hash": "7aa3287ffda8c6058be246859936e32a6b288248"
+    },
+    {
+      "path": "packages/driftyco_ionic/release/fonts/ionicons.eot",
+      "where": "client",
+      "type": "asset",
+      "cacheable": false,
+      "url": "/packages/driftyco_ionic/release/fonts/ionicons.eot",
+      "size": 120724,
+      "hash": "61532e89e212f8dd16ba31f3ebcf35c0a7334035"
+    },
+    {
+      "path": "packages/driftyco_ionic/release/fonts/ionicons.svg",
+      "where": "client",
+      "type": "asset",
+      "cacheable": false,
+      "url": "/packages/driftyco_ionic/release/fonts/ionicons.svg",
+      "size": 333834,
+      "hash": "3f1ca28fcb042d2bcc6ee6a4e3dd817e5132eeea"
+    },
+    {
+      "path": "packages/driftyco_ionic/release/fonts/ionicons.ttf",
+      "where": "client",
+      "type": "asset",
+      "cacheable": false,
+      "url": "/packages/driftyco_ionic/release/fonts/ionicons.ttf",
+      "size": 188508,
+      "hash": "1b0a0de084905946a20300ca8c354865dec46764"
+    },
+    {
+      "path": "packages/driftyco_ionic/release/fonts/ionicons.woff",
+      "where": "client",
+      "type": "asset",
+      "cacheable": false,
+      "url": "/packages/driftyco_ionic/release/fonts/ionicons.woff",
+      "size": 67904,
+      "hash": "e46819e863a46751d622c1190c4e8a83ebc20612"
+    },
+    {
+      "path": "app/jquery.ui.touch-punch.min.js",
+      "where": "client",
+      "type": "asset",
+      "cacheable": false,
+      "url": "/jquery.ui.touch-punch.min.js",
+      "size": 1291,
+      "hash": "c1c36e6927436231eb20474356b29667c4c648aa"
+    },
+    {
+      "path": "app/reindeer.png",
+      "where": "client",
+      "type": "asset",
+      "cacheable": false,
+      "url": "/reindeer.png",
+      "size": 6356,
+      "hash": "4ddc49df01c68452fbfefbd46d5281ae08e78cbe"
+    },
+    {
+      "path": "app/socket.io.js",
+      "where": "client",
+      "type": "asset",
+      "cacheable": false,
+      "url": "/socket.io.js",
+      "size": 174269,
+      "hash": "e9da80bd175b397cae8f8863d4535cbb2660846d"
+    },
+    {
+      "path": "app/img/batman.jpg",
+      "where": "client",
+      "type": "asset",
+      "cacheable": false,
+      "url": "/img/batman.jpg",
+      "size": 519333,
+      "hash": "5383d2e13d69d362db7edcc5313dcdbac7cd592f"
+    },
+    {
+      "path": "app/img/bullsh.jpg",
+      "where": "client",
+      "type": "asset",
+      "cacheable": false,
+      "url": "/img/bullsh.jpg",
+      "size": 72124,
+      "hash": "cc9af0800e3d07f982fb70aee5e8a1811cd3c209"
+    },
+    {
+      "path": "app/img/jason.jpg",
+      "where": "client",
+      "type": "asset",
+      "cacheable": false,
+      "url": "/img/jason.jpg",
+      "size": 14101,
+      "hash": "5d9ef8cca998b735ff5826beee4b456c2073a2b1"
+    },
+    {
+      "path": "app/img/rogue_portrait.jpg",
+      "where": "client",
+      "type": "asset",
+      "cacheable": false,
+      "url": "/img/rogue_portrait.jpg",
+      "size": 300360,
+      "hash": "52349b1038145ef7796cf9e451dcea9eda43cb13"
+    },
+    {
+      "path": "app/img/sparky.jpg",
+      "where": "client",
+      "type": "asset",
+      "cacheable": false,
+      "url": "/img/sparky.jpg",
+      "size": 2590737,
+      "hash": "fbbaeab3649d89c235dbf641329855652377d02a"
+    },
+    {
+      "path": "head.html",
+      "where": "internal",
+      "type": "head",
+      "hash": "cd983b2172f08cda86fa69402f6ed650c70cb105"
+    },
+    {
+      "path": "body.html",
+      "where": "internal",
+      "type": "body",
+      "hash": "677ee7da65452e65f887d0e5caa59395dbb883cb"
+    }
+  ]
+}

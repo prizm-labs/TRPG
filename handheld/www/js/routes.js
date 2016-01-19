@@ -23,6 +23,15 @@ app.config(function($stateProvider, $urlRouterProvider) {
         }
       }
     })
+    .state('tabs.debug', {
+      url: "/debug",
+      views: {
+        'debug-tab': {
+          templateUrl: "templates/about.ng.html",
+          controller: 'DebugTabCtrl'
+        }
+      }
+    })
     .state('tabs.navstack', {
       url: "/navstack",
       views: {

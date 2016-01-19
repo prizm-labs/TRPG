@@ -2,7 +2,8 @@ app = angular.module('combatApp', [
   //'angular-meteor',
   //'ngCordova'
   'ui.router',
-  'ionic'
+  'ionic',
+  'combatApp.services'
   ]);
 
 

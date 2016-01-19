@@ -1,4 +1,4 @@
-angular.module('starter.services', ['btford.socket-io'])
+angular.module('combatApp.services', ['btford.socket-io'])
 
 .factory('socket',function(socketFactory){
   //Create socket and connect to http://chat.socket.io

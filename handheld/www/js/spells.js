@@ -1,12 +1,12 @@
 //main controller
-app.controller('SpellTabCtrl', function($scope, $ionicModal) {
+app.controller('SpellTabCtrl', function($scope, $ionicModal, socket) {
 
   var rpc = Asteroid.call("getSpellsData");
 
   rpc.result.then(function(result) {
 
       console.log('TRPG JSON loaded');
-      
+
       $scope.$apply(function(){
         $scope.spells = result;
       })

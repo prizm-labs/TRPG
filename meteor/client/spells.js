@@ -81,43 +81,59 @@ app.controller('SpellTabCtrl', function($scope, $ionicModal) {
     console.log("have toggled: " + targetName);
   };
 
-  $ionicModal.fromTemplateUrl('templates/attackPatterns/mapPoint.ng.html', {
-      scope: $scope,
-      animation: 'slide-in-up'
-    }).then(function(modal) {
-      $scope.modal = modal;
-    });
+  // $ionicModal.fromTemplateUrl('templates/attackPatterns/mapPoint.ng.html', {
+  //     scope: $scope,
+  //     animation: 'slide-in-up'
+  //   }).then(function(modal) {
+  //     $scope.modal = modal;
+  //   });
 
-  $scope.openModal = function(targetingPattern){
+  $scope.modals = {};
 
+  targetingPatterns = ['angle','line','mapPoint','multi','single'];
+
+  _.each(targetingPatterns,function(targetingPattern){
     $ionicModal.fromTemplateUrl('templates/attackPatterns/' + targetingPattern + '.ng.html', {
         scope: $scope,
         animation: 'slide-in-up'
       }).then(function(modal) {
-        $scope.modal = modal;
+        $scope.modals[targetingPattern] = modal;
+        console.log(targetingPattern,$scope.modals);
+      });
+  })
+
+
+
+  $scope.openModal = function(targetingPattern){
+
+        $scope.modal = $scope.modals[targetingPattern];
         $scope.modal.show();
 
-        jQuery(".angleTargeting").knob({
-          'change' : function(newValue) {
-            console.log(newValue);
-          }
-        });
-        jQuery('.angleTargeting').trigger(
-          'configure',
-          {
-              "width":200,
-              "min":0,
-              "max":100,
-              "fgColor":"#222222",
-              "angleOffset":-125,
-              "thickness":".5",
-              "angleArc":250,
-              "value":50,
-              "cursor":30
-          }
-        );
-        jQuery('.angleTargeting').val(50).trigger('change');
-      });
+        if (targetingPattern=='angle') {
+          jQuery(".angleTargeting").knob({
+            'change' : function(newValue) {
+              console.log(newValue);
+            }
+          });
+          jQuery('.angleTargeting').trigger(
+            'configure',
+            {
+                "width":200,
+                "min":0,
+                "max":100,
+                "fgColor":"#222222",
+                "angleOffset":-125,
+                "thickness":".5",
+                "angleArc":250,
+                "value":50,
+                "cursor":30
+            }
+          );
+          jQuery('.angleTargeting').val(50).trigger('change');
+
+        }
+
+
 
 
     console.log(targetingPattern);

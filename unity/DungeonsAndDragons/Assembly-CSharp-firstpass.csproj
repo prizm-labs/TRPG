@@ -120,16 +120,16 @@
  <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/Networking/UnityEngine.Networking.dll</HintPath>
  </Reference>
  <Reference Include="ICSharpCode.SharpZipLib">
- <HintPath>C:/Users/Danny.danny/Dropbox/Danny - Personal/DungeonsAndDragons/Assets/Plugins/ICSharpCode.SharpZipLib.dll</HintPath>
+ <HintPath>C:/Users/Danny.danny/Documents/GitHub/TRPG/unity/DungeonsAndDragons/Assets/Plugins/ICSharpCode.SharpZipLib.dll</HintPath>
  </Reference>
  <Reference Include="JsonFx">
- <HintPath>C:/Users/Danny.danny/Dropbox/Danny - Personal/DungeonsAndDragons/Assets/Plugins/JsonFx.dll</HintPath>
+ <HintPath>C:/Users/Danny.danny/Documents/GitHub/TRPG/unity/DungeonsAndDragons/Assets/Plugins/JsonFx.dll</HintPath>
  </Reference>
  <Reference Include="TouchScript">
- <HintPath>C:/Users/Danny.danny/Dropbox/Danny - Personal/DungeonsAndDragons/Assets/TouchScript/Plugins/TouchScript.dll</HintPath>
+ <HintPath>C:/Users/Danny.danny/Documents/GitHub/TRPG/unity/DungeonsAndDragons/Assets/TouchScript/Plugins/TouchScript.dll</HintPath>
  </Reference>
  <Reference Include="TouchScript.Windows">
- <HintPath>C:/Users/Danny.danny/Dropbox/Danny - Personal/DungeonsAndDragons/Assets/TouchScript/Plugins/TouchScript.Windows.dll</HintPath>
+ <HintPath>C:/Users/Danny.danny/Documents/GitHub/TRPG/unity/DungeonsAndDragons/Assets/TouchScript/Plugins/TouchScript.Windows.dll</HintPath>
  </Reference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

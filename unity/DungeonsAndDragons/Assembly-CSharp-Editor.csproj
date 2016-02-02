@@ -121,7 +121,7 @@
      <None Include="Assets\unity-socket.io-master\SocketIO\readme.txt" />
      <None Include="Assets\ImportedAssets\Realistic Effects Pack\Shaders\WaterFree.shader" />
  <Reference Include="Assembly-UnityScript">
- <HintPath>C:/Users/Danny.danny/Dropbox/Danny - Personal/DungeonsAndDragons/Library/ScriptAssemblies/Assembly-UnityScript.dll</HintPath>
+ <HintPath>C:/Users/Danny.danny/Documents/GitHub/TRPG/unity/DungeonsAndDragons/Library/ScriptAssemblies/Assembly-UnityScript.dll</HintPath>
  </Reference>
  <Reference Include="UnityEditor.Advertisements">
  <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/Advertisements/Editor/UnityEditor.Advertisements.dll</HintPath>
@@ -148,28 +148,28 @@
  <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/TreeEditor/Editor/UnityEditor.TreeEditor.dll</HintPath>
  </Reference>
  <Reference Include="ICSharpCode.SharpZipLib">
- <HintPath>C:/Users/Danny.danny/Dropbox/Danny - Personal/DungeonsAndDragons/Assets/Plugins/ICSharpCode.SharpZipLib.dll</HintPath>
+ <HintPath>C:/Users/Danny.danny/Documents/GitHub/TRPG/unity/DungeonsAndDragons/Assets/Plugins/ICSharpCode.SharpZipLib.dll</HintPath>
  </Reference>
  <Reference Include="JsonFx">
- <HintPath>C:/Users/Danny.danny/Dropbox/Danny - Personal/DungeonsAndDragons/Assets/Plugins/JsonFx.dll</HintPath>
+ <HintPath>C:/Users/Danny.danny/Documents/GitHub/TRPG/unity/DungeonsAndDragons/Assets/Plugins/JsonFx.dll</HintPath>
  </Reference>
  <Reference Include="TouchScript.Editor">
- <HintPath>C:/Users/Danny.danny/Dropbox/Danny - Personal/DungeonsAndDragons/Assets/TouchScript/Editor/TouchScript.Editor.dll</HintPath>
+ <HintPath>C:/Users/Danny.danny/Documents/GitHub/TRPG/unity/DungeonsAndDragons/Assets/TouchScript/Editor/TouchScript.Editor.dll</HintPath>
  </Reference>
  <Reference Include="TouchScript.Windows.Editor">
- <HintPath>C:/Users/Danny.danny/Dropbox/Danny - Personal/DungeonsAndDragons/Assets/TouchScript/Editor/TouchScript.Windows.Editor.dll</HintPath>
+ <HintPath>C:/Users/Danny.danny/Documents/GitHub/TRPG/unity/DungeonsAndDragons/Assets/TouchScript/Editor/TouchScript.Windows.Editor.dll</HintPath>
  </Reference>
  <Reference Include="TouchScript.Editor">
- <HintPath>C:/Users/Danny.danny/Dropbox/Danny - Personal/DungeonsAndDragons/Assets/TouchScript/Examples/Editor/TouchScript.Editor.dll</HintPath>
+ <HintPath>C:/Users/Danny.danny/Documents/GitHub/TRPG/unity/DungeonsAndDragons/Assets/TouchScript/Examples/Editor/TouchScript.Editor.dll</HintPath>
  </Reference>
  <Reference Include="TouchScript.Windows.Editor">
- <HintPath>C:/Users/Danny.danny/Dropbox/Danny - Personal/DungeonsAndDragons/Assets/TouchScript/Examples/Editor/TouchScript.Windows.Editor.dll</HintPath>
+ <HintPath>C:/Users/Danny.danny/Documents/GitHub/TRPG/unity/DungeonsAndDragons/Assets/TouchScript/Examples/Editor/TouchScript.Windows.Editor.dll</HintPath>
  </Reference>
  <Reference Include="TouchScript">
- <HintPath>C:/Users/Danny.danny/Dropbox/Danny - Personal/DungeonsAndDragons/Assets/TouchScript/Plugins/TouchScript.dll</HintPath>
+ <HintPath>C:/Users/Danny.danny/Documents/GitHub/TRPG/unity/DungeonsAndDragons/Assets/TouchScript/Plugins/TouchScript.dll</HintPath>
  </Reference>
  <Reference Include="TouchScript.Windows">
- <HintPath>C:/Users/Danny.danny/Dropbox/Danny - Personal/DungeonsAndDragons/Assets/TouchScript/Plugins/TouchScript.Windows.dll</HintPath>
+ <HintPath>C:/Users/Danny.danny/Documents/GitHub/TRPG/unity/DungeonsAndDragons/Assets/TouchScript/Plugins/TouchScript.Windows.dll</HintPath>
  </Reference>
  <Reference Include="UnityEditor.Graphs">
  <HintPath>C:/Program Files/Unity/Editor/Data/Managed/UnityEditor.Graphs.dll</HintPath>

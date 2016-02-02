@@ -1,0 +1,54 @@
+{
+    "rfBindings": //object with name and array
+        [   
+             {
+                "id":["B4 8F C5 62", "RANGER"], 
+                "components": ["good"],
+                "properties": {
+                    "type":"actor", "name":"ranger"
+                }
+            },
+             {
+                "id":["C4 A5 C5 62", "WIZARD"], 
+                "components": ["good"],
+                "properties": {
+                    "type":"actor", "name":"wizard"
+                }
+            },
+             {
+                "id":["64 5C C4 62", "WARRIOR"], 
+                "components": ["good"],
+                "properties": {
+                    "type":"actor", "name":"warrior"
+                }
+            },
+             {
+                "id":["21 B3 58 26", "CLERIC"], 
+                "components": ["good"],
+                "properties": {
+                    "type":"actor", "name":"cleric"
+                }
+            },
+             {
+                "id":["B1 C7 55 26", "KOBOLD"], 
+                "components": ["evil"],
+                "properties": {
+                    "type":"actor", "name":"kobold"
+                }
+            },
+             {
+                "id":["A1 BE 59 26", "ZOMBIE"], 
+                "components": ["evil"],
+                "properties": {
+                    "type":"actor", "name":"zombie"
+                }
+            },
+             {
+                "id":["44 AF C3 62", "GOBLIN"], 
+                "components": ["evil"],
+                "properties": {
+                    "type":"actor", "name":"goblin"
+                }
+            }
+        ]
+}

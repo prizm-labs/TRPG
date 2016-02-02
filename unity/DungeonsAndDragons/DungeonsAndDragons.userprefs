@@ -1,0 +1,31 @@
+﻿<Properties StartupItem="Assembly-CSharp.csproj">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\_Scripts\GameManager.cs">
+    <Files>
+      <File FileName="Assets\_Scripts\GameManager.cs" Line="33" Column="36" />
+      <File FileName="Assets\_Scripts\ActorManager.cs" Line="1" Column="1" />
+      <File FileName="Assets\PrizmLib\Scripts\SocketToJSON.cs" Line="1" Column="1" />
+      <File FileName="Assets\PrizmLib\Scripts\SocketToDDListener.cs" Line="30" Column="3" />
+      <File FileName="Assets\_Scripts\socketDataDump.cs" Line="1" Column="1" />
+      <File FileName="Assets\_Scripts\Actor.cs" Line="1" Column="1" />
+      <File FileName="Assets\_Scripts\SceneLoader.cs" Line="38" Column="3" />
+      <File FileName="Assets\_Scripts\MultiScreen_Scripts\TabletopInitialization.cs" Line="179" Column="1" />
+      <File FileName="Assets\_Scripts\MultiScreen_Scripts\PrizmRecordGroup.cs" Line="1" Column="1" />
+      <File FileName="Assets\_Scripts\MultiScreen_Scripts\PrizmRecord.cs" Line="1" Column="1" />
+      <File FileName="Assets\Meteor\LiveData\Collection.cs" Line="1" Column="1" />
+      <File FileName="..\..\..\Documents\GitHub\SettlersOfCatan\Unity_Settlers\Assets\Scripts\MultiScreen_Scripts\GameManager.cs" Line="1" Column="1" />
+      <File FileName="..\..\..\Documents\GitHub\SettlersOfCatan\Unity_Settlers\Assets\Scripts\MultiScreen_Scripts\TabletopInitialization.cs" Line="1" Column="1" />
+      <File FileName="..\..\..\Documents\GitHub\SettlersOfCatan\Unity_Settlers\Assets\Scripts\MultiScreen_Scripts\PrizmRecordGroup.cs" Line="1" Column="1" />
+      <File FileName="Assets\_Scripts\MultiScreen_Scripts\Constants.cs" Line="1" Column="1" />
+      <File FileName="Assets\Meteor\LiveData\Method.cs" Line="1" Column="1" />
+      <File FileName="Assets\Meteor\LiveData\LiveData.cs" Line="1" Column="1" />
+      <File FileName="Assets\_Scripts\magicMissile.cs" Line="1" Column="1" />
+      <File FileName="Assets\PrizmLib\Scripts\RFManager.cs" Line="1" Column="1" />
+      <File FileName="Assets\_Scripts\TileManager.cs" Line="37" Column="45" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+</Properties>

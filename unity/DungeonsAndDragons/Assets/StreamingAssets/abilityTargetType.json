@@ -1,0 +1,13 @@
+{
+	"coneOfCold": {"targetType":"0", "radius":"50", "amount": "3"},
+	"fireball":{"targetType":"0", "radius":"50", "amount": "4"},
+	"magicMissile":{"targetType":"0", "radius":"50", "amount": "4"},
+	"axeMelee":{"targetType":"0", "radius":"50", "amount": "5"},
+	"axeRanged":{"targetType":"0", "radius":"50", "amount": "4"},
+	"heal":{"targetType":"3", "radius":"50", "amount": "2"},
+	"hammer":{"targetType":"0", "radius":"50", "amount": "3"},
+	"arrow":{"targetType":"0", "radius":"50", "amount": "3"},
+	"dualSwords":{"targetType":"0", "radius":"50", "amount": "4"},
+	"bite":{"targetType":"4", "radius":"50", "amount": "3"},
+	"acidBreath":{"targetType":"4", "radius":"50", "amount": "4"}
+}

@@ -1,0 +1,430 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>10.0.20506</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <RootNamespace></RootNamespace>
+    <ProjectGuid>{D2D70CC4-A325-A8F0-7C60-FC6A720A4540}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <AssemblyName>Assembly-CSharp</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <BaseDirectory>Assets</BaseDirectory>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>Temp\bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE;UNITY_5_3_1;UNITY_5_3;UNITY_5;UNITY_64;ENABLE_NEW_BUGREPORTER;ENABLE_AUDIO;ENABLE_CACHING;ENABLE_CLOTH;ENABLE_DUCK_TYPING;ENABLE_FRAME_DEBUGGER;ENABLE_GENERICS;ENABLE_HOME_SCREEN;ENABLE_IMAGEEFFECTS;ENABLE_LIGHT_PROBES_LEGACY;ENABLE_MICROPHONE;ENABLE_MULTIPLE_DISPLAYS;ENABLE_PHYSICS;ENABLE_PLUGIN_INSPECTOR;ENABLE_SHADOWS;ENABLE_SINGLE_INSTANCE_BUILD_SETTING;ENABLE_SPRITERENDERER_FLIPPING;ENABLE_SPRITES;ENABLE_SPRITE_POLYGON;ENABLE_TERRAIN;ENABLE_RAKNET;ENABLE_UNET;ENABLE_UNITYEVENTS;ENABLE_VR;ENABLE_WEBCAM;ENABLE_WWW;ENABLE_CLOUD_SERVICES;ENABLE_CLOUD_SERVICES_ADS;ENABLE_CLOUD_HUB;ENABLE_CLOUD_PROJECT_ID;ENABLE_CLOUD_SERVICES_PURCHASING;ENABLE_CLOUD_SERVICES_ANALYTICS;ENABLE_CLOUD_SERVICES_UNET;ENABLE_CLOUD_SERVICES_BUILD;ENABLE_CLOUD_LICENSE;ENABLE_EDITOR_METRICS;ENABLE_EDITOR_METRICS_CACHING;INCLUDE_DYNAMIC_GI;INCLUDE_GI;INCLUDE_IL2CPP;INCLUDE_DIRECTX12;PLATFORM_SUPPORTS_MONO;RENDER_SOFTWARE_CURSOR;ENABLE_LOCALIZATION;ENABLE_ANDROID_ATLAS_ETC1_COMPRESSION;ENABLE_EDITOR_TESTS_RUNNER;UNITY_STANDALONE_WIN;UNITY_STANDALONE;ENABLE_SUBSTANCE;ENABLE_TEXTUREID_MAP;ENABLE_RUNTIME_GI;ENABLE_MOVIES;ENABLE_NETWORK;ENABLE_CRUNCH_TEXTURE_COMPRESSION;ENABLE_LOG_MIXED_STACKTRACE;ENABLE_UNITYWEBREQUEST;ENABLE_EVENT_QUEUE;ENABLE_CLUSTERINPUT;ENABLE_WEBSOCKET_HOST;ENABLE_MONO;DEVELOPMENT_BUILD;ENABLE_PROFILER;UNITY_ASSERTIONS;UNITY_EDITOR;UNITY_EDITOR_64;UNITY_EDITOR_WIN</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <NoWarn>0169</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>Temp\bin\Release\</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <NoWarn>0169</NoWarn>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.XML" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="UnityEngine">
+      <HintPath>C:/Program Files/Unity/Editor/Data/Managed/UnityEngine.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEditor">
+      <HintPath>C:/Program Files/Unity/Editor/Data/Managed/UnityEditor.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+     <Compile Include="Assets\ImportedAssets\InteractiveDemo\Scripts\FireProjectile.cs" />
+     <Compile Include="Assets\ImportedAssets\InteractiveDemo\Scripts\HUDFPS.cs" />
+     <Compile Include="Assets\ImportedAssets\InteractiveDemo\Scripts\MyGUI.cs" />
+     <Compile Include="Assets\ImportedAssets\InteractiveDemo\Scripts\Projectile.cs" />
+     <Compile Include="Assets\ImportedAssets\InteractiveDemo\Scripts\ProjectileScript.cs" />
+     <Compile Include="Assets\ImportedAssets\InteractiveDemo\Scripts\lightScript.cs" />
+     <Compile Include="Assets\ImportedAssets\InteractiveDemo\Scripts\lightScriptLong.cs" />
+     <Compile Include="Assets\ImportedAssets\Realistic Effects Pack\Materials\Objects\FireJetPack\FlyDemo.cs" />
+     <Compile Include="Assets\ImportedAssets\Realistic Effects Pack\Scripts\Demo\MyGUI3_1.cs" />
+     <Compile Include="Assets\ImportedAssets\Realistic Effects Pack\Scripts\Demo\MyGui.cs" />
+     <Compile Include="Assets\ImportedAssets\Realistic Effects Pack\Scripts\Demo\MyGuiV2.cs" />
+     <Compile Include="Assets\ImportedAssets\Realistic Effects Pack\Scripts\Prefabs\Balls\AddMaterialOnHit.cs" />
+     <Compile Include="Assets\ImportedAssets\Realistic Effects Pack\Scripts\Prefabs\Balls\AnimatorBehaviour.cs" />
+     <Compile Include="Assets\ImportedAssets\Realistic Effects Pack\Scripts\Prefabs\Balls\IceOffsetBehaviour.cs" />
+     <Compile Include="Assets\ImportedAssets\Realistic Effects Pack\Scripts\Prefabs\Balls\LazyLoad.cs" />
+     <Compile Include="Assets\ImportedAssets\Realistic Effects Pack\Scripts\Prefabs\Balls\LineProjectileCollisionBehaviour.cs" />
+     <Compile Include="Assets\ImportedAssets\Realistic Effects Pack\Scripts\Prefabs\Balls\ProjectileCollisionBehaviour.cs" />
+     <Compile Include="Assets\ImportedAssets\Realistic Effects Pack\Scripts\Prefabs\Balls\ScaleParticlesFromBound.cs" />
+     <Compile Include="Assets\ImportedAssets\Realistic Effects Pack\Scripts\Prefabs\Balls\SetRandomStartPoint.cs" />
+     <Compile Include="Assets\ImportedAssets\Realistic Effects Pack\Scripts\Prefabs\Buffs\AnimationSpeedDebuff.cs" />
+     <Compile Include="Assets\ImportedAssets\Realistic Effects Pack\Scripts\Prefabs\Buffs\DebuffOnEnemyFromCollision.cs" />
+     <Compile Include="Assets\ImportedAssets\Realistic Effects Pack\Scripts\Prefabs\Buffs\ShieldCollisionBehaviour.cs" />
+     <Compile Include="Assets\ImportedAssets\Realistic Effects Pack\Scripts\Prefabs\Buffs\WaterUvAnimation.cs" />
+     <Compile Include="Assets\ImportedAssets\Realistic Effects Pack\Scripts\Prefabs\Buffs\WaterWaveUvAnimation.cs" />
+     <Compile Include="Assets\ImportedAssets\Realistic Effects Pack\Scripts\Prefabs\Objects\MoveOnGround.cs" />
+     <Compile Include="Assets\ImportedAssets\Realistic Effects Pack\Scripts\Prefabs\Objects\OffsetOnNormal.cs" />
+     <Compile Include="Assets\ImportedAssets\Realistic Effects Pack\Scripts\Prefabs\Objects\OnRigidbodySendCollision.cs" />
+     <Compile Include="Assets\ImportedAssets\Realistic Effects Pack\Scripts\Prefabs\Objects\ResetPositionOnDiactivated.cs" />
+     <Compile Include="Assets\ImportedAssets\Realistic Effects Pack\Scripts\Prefabs\Shots\LineRendererBehaviour.cs" />
+     <Compile Include="Assets\ImportedAssets\Realistic Effects Pack\Scripts\Prefabs\Waves\ClothGridCollisionBehaviour.cs" />
+     <Compile Include="Assets\ImportedAssets\Realistic Effects Pack\Scripts\Prefabs\Waves\InstanceMaterial.cs" />
+     <Compile Include="Assets\ImportedAssets\Realistic Effects Pack\Scripts\Share\Billboard.cs" />
+     <Compile Include="Assets\ImportedAssets\Realistic Effects Pack\Scripts\Share\CollisionActiveBehaviour.cs" />
+     <Compile Include="Assets\ImportedAssets\Realistic Effects Pack\Scripts\Share\DeadTime.cs" />
+     <Compile Include="Assets\ImportedAssets\Realistic Effects Pack\Scripts\Share\DistortionMobile.cs" />
+     <Compile Include="Assets\ImportedAssets\Realistic Effects Pack\Scripts\Share\EffectSettings.cs" />
+     <Compile Include="Assets\ImportedAssets\Realistic Effects Pack\Scripts\Share\FadeInOutLight.cs" />
+     <Compile Include="Assets\ImportedAssets\Realistic Effects Pack\Scripts\Share\FadeInOutParticles.cs" />
+     <Compile Include="Assets\ImportedAssets\Realistic Effects Pack\Scripts\Share\FadeInOutScale.cs" />
+     <Compile Include="Assets\ImportedAssets\Realistic Effects Pack\Scripts\Share\FadeInOutShaderColor.cs" />
+     <Compile Include="Assets\ImportedAssets\Realistic Effects Pack\Scripts\Share\FadeInOutShaderFloat.cs" />
+     <Compile Include="Assets\ImportedAssets\Realistic Effects Pack\Scripts\Share\FadeInOutSound.cs" />
+     <Compile Include="Assets\ImportedAssets\Realistic Effects Pack\Scripts\Share\FadeInOutStatus.cs" />
+     <Compile Include="Assets\ImportedAssets\Realistic Effects Pack\Scripts\Share\FixShaderQueue.cs" />
+     <Compile Include="Assets\ImportedAssets\Realistic Effects Pack\Scripts\Share\FixSlowDistortionOnMobile.cs" />
+     <Compile Include="Assets\ImportedAssets\Realistic Effects Pack\Scripts\Share\InvokeInterval.cs" />
+     <Compile Include="Assets\ImportedAssets\Realistic Effects Pack\Scripts\Share\OnStartSendCollision.cs" />
+     <Compile Include="Assets\ImportedAssets\Realistic Effects Pack\Scripts\Share\QueueUvAnimation.cs" />
+     <Compile Include="Assets\ImportedAssets\Realistic Effects Pack\Scripts\Share\RandomRotate.cs" />
+     <Compile Include="Assets\ImportedAssets\Realistic Effects Pack\Scripts\Share\RandomRotateOnStart.cs" />
+     <Compile Include="Assets\ImportedAssets\Realistic Effects Pack\Scripts\Share\SetPositionOnHit.cs" />
+     <Compile Include="Assets\ImportedAssets\Realistic Effects Pack\Scripts\Share\UVTextureAnimator.cs" />
+     <Compile Include="Assets\KunaiEditor\KunaiRotation.cs" />
+     <Compile Include="Assets\Meteor\CoroutineHost.cs" />
+     <Compile Include="Assets\Meteor\Error.cs" />
+     <Compile Include="Assets\Meteor\Extensions\MonoSingleton.cs" />
+     <Compile Include="Assets\Meteor\Extensions\ObjectExtensions.cs" />
+     <Compile Include="Assets\Meteor\Extensions\StringExtensions.cs" />
+     <Compile Include="Assets\Meteor\JsonFx\DataReaderProvider.cs" />
+     <Compile Include="Assets\Meteor\JsonFx\DataWriterProvider.cs" />
+     <Compile Include="Assets\Meteor\JsonFx\EcmaScriptIdentifier.cs" />
+     <Compile Include="Assets\Meteor\JsonFx\EcmaScriptWriter.cs" />
+     <Compile Include="Assets\Meteor\JsonFx\IDataReader.cs" />
+     <Compile Include="Assets\Meteor\JsonFx\IDataWriter.cs" />
+     <Compile Include="Assets\Meteor\JsonFx\IJsonSerializable.cs" />
+     <Compile Include="Assets\Meteor\JsonFx\JsonDataReader.cs" />
+     <Compile Include="Assets\Meteor\JsonFx\JsonDataWriter.cs" />
+     <Compile Include="Assets\Meteor\JsonFx\JsonIgnoreAttribute.cs" />
+     <Compile Include="Assets\Meteor\JsonFx\JsonNameAttribute.cs" />
+     <Compile Include="Assets\Meteor\JsonFx\JsonReader.cs" />
+     <Compile Include="Assets\Meteor\JsonFx\JsonReaderSettings.cs" />
+     <Compile Include="Assets\Meteor\JsonFx\JsonSerializationException.cs" />
+     <Compile Include="Assets\Meteor\JsonFx\JsonSpecifiedPropertyAttribute.cs" />
+     <Compile Include="Assets\Meteor\JsonFx\JsonToken.cs" />
+     <Compile Include="Assets\Meteor\JsonFx\JsonWriter.cs" />
+     <Compile Include="Assets\Meteor\JsonFx\JsonWriterSettings.cs" />
+     <Compile Include="Assets\Meteor\JsonFx\TypeCoercionUtility.cs" />
+     <Compile Include="Assets\Meteor\LiveData\CachedCollection.cs" />
+     <Compile Include="Assets\Meteor\LiveData\Collection.cs" />
+     <Compile Include="Assets\Meteor\LiveData\CollectionCollection.cs" />
+     <Compile Include="Assets\Meteor\LiveData\Connection.cs" />
+     <Compile Include="Assets\Meteor\LiveData\IDataSubscriber.cs" />
+     <Compile Include="Assets\Meteor\LiveData\ILiveData.cs" />
+     <Compile Include="Assets\Meteor\LiveData\IMethod.cs" />
+     <Compile Include="Assets\Meteor\LiveData\LiveData.cs" />
+     <Compile Include="Assets\Meteor\LiveData\Message.cs" />
+     <Compile Include="Assets\Meteor\LiveData\Messages\AddedBeforeMessage.cs" />
+     <Compile Include="Assets\Meteor\LiveData\Messages\AddedMessage.cs" />
+     <Compile Include="Assets\Meteor\LiveData\Messages\AddedMessage`1.cs" />
+     <Compile Include="Assets\Meteor\LiveData\Messages\ChangedMessage.cs" />
+     <Compile Include="Assets\Meteor\LiveData\Messages\CollectionMessage.cs" />
+     <Compile Include="Assets\Meteor\LiveData\Messages\ConnectMessage.cs" />
+     <Compile Include="Assets\Meteor\LiveData\Messages\ConnectedMessage.cs" />
+     <Compile Include="Assets\Meteor\LiveData\Messages\MethodMessage.cs" />
+     <Compile Include="Assets\Meteor\LiveData\Messages\MovedBeforeMessage.cs" />
+     <Compile Include="Assets\Meteor\LiveData\Messages\ReadyMessage.cs" />
+     <Compile Include="Assets\Meteor\LiveData\Messages\RemovedMessage.cs" />
+     <Compile Include="Assets\Meteor\LiveData\Messages\ResultMessage.cs" />
+     <Compile Include="Assets\Meteor\LiveData\Messages\ResultMessage`1.cs" />
+     <Compile Include="Assets\Meteor\LiveData\Messages\SubscribeMessage.cs" />
+     <Compile Include="Assets\Meteor\LiveData\Messages\UnsubscribeMessage.cs" />
+     <Compile Include="Assets\Meteor\LiveData\Messages\UpdatedMessage.cs" />
+     <Compile Include="Assets\Meteor\LiveData\Method.cs" />
+     <Compile Include="Assets\Meteor\LiveData\MongoDocument.cs" />
+     <Compile Include="Assets\Meteor\LiveData\Subscription.cs" />
+     <Compile Include="Assets\Meteor\LiveData\SubscriptionCollection.cs" />
+     <Compile Include="Assets\Meteor\SRP\BigInteger.cs" />
+     <Compile Include="Assets\Meteor\SRP\Crypto.cs" />
+     <Compile Include="Assets\Meteor\SRP\Hex.cs" />
+     <Compile Include="Assets\Meteor\SRP\SHA256.cs" />
+     <Compile Include="Assets\Meteor\SRP\SRP.cs" />
+     <Compile Include="Assets\Meteor\SRP\UTF8.cs" />
+     <Compile Include="Assets\Meteor\Services\Accounts\Accounts.cs" />
+     <Compile Include="Assets\Meteor\Services\Accounts\BeginPasswordExchangeOptions.cs" />
+     <Compile Include="Assets\Meteor\Services\Accounts\ChallengeResponse.cs" />
+     <Compile Include="Assets\Meteor\Services\Accounts\ChallengeResponseOptions.cs" />
+     <Compile Include="Assets\Meteor\Services\Accounts\CreateUserOptions.cs" />
+     <Compile Include="Assets\Meteor\Services\Accounts\FacebookUser.cs" />
+     <Compile Include="Assets\Meteor\Services\Accounts\InsecureLoginUserOptions.cs" />
+     <Compile Include="Assets\Meteor\Services\Accounts\LoginUserResult.cs" />
+     <Compile Include="Assets\Meteor\Services\Accounts\LoginUserUser.cs" />
+     <Compile Include="Assets\Meteor\Services\Accounts\LoginWithTokenOptions.cs" />
+     <Compile Include="Assets\Meteor\Services\Accounts\PasswordChallenge.cs" />
+     <Compile Include="Assets\Meteor\Services\Accounts\PasswordExchangeVerifier.cs" />
+     <Compile Include="Assets\Meteor\Services\Accounts\PasswordExchangeVerifierUser.cs" />
+     <Compile Include="Assets\Meteor\Services\Accounts\Profile.cs" />
+     <Compile Include="Assets\Meteor\Services\Accounts\StartExchange.cs" />
+     <Compile Include="Assets\Meteor\Services\Accounts\Verifier.cs" />
+     <Compile Include="Assets\Meteor\Tests\AccountsTests.cs" />
+     <Compile Include="Assets\Meteor\Tests\CollectionTests.cs" />
+     <Compile Include="Assets\Meteor\Tests\ConnectionTestDependency.cs" />
+     <Compile Include="Assets\Meteor\UniWeb\Examples\WebSocketExample.cs" />
+     <Compile Include="Assets\Meteor\UniWeb\Plugins\Arc4RandomNumberGenerator.cs" />
+     <Compile Include="Assets\Meteor\UniWeb\Plugins\Headers.cs" />
+     <Compile Include="Assets\Meteor\UniWeb\Plugins\JsonSerializer.cs" />
+     <Compile Include="Assets\Meteor\UniWeb\Plugins\Request.cs" />
+     <Compile Include="Assets\Meteor\UniWeb\Plugins\Response.cs" />
+     <Compile Include="Assets\Meteor\UniWeb\Plugins\SimpleWWW.cs" />
+     <Compile Include="Assets\Meteor\UniWeb\Plugins\SocketIO\SocketIOHandler.cs" />
+     <Compile Include="Assets\Meteor\UniWeb\Plugins\SocketIO\SocketIOMessage.cs" />
+     <Compile Include="Assets\Meteor\UniWeb\Plugins\Utility.cs" />
+     <Compile Include="Assets\Meteor\UniWeb\Plugins\WebSocket.cs" />
+     <Compile Include="Assets\Meteor\UniWeb\Scripts\SocketIOConnection.cs" />
+     <Compile Include="Assets\PrizmLib\Scripts\AndroidReceiver.cs" />
+     <Compile Include="Assets\PrizmLib\Scripts\PlatformManagerScript.cs" />
+     <Compile Include="Assets\PrizmLib\Scripts\Prizm.cs" />
+     <Compile Include="Assets\PrizmLib\Scripts\RFManager.cs" />
+     <Compile Include="Assets\PrizmLib\Scripts\SocketMessenger.cs" />
+     <Compile Include="Assets\PrizmLib\Scripts\SocketToDDListener.cs" />
+     <Compile Include="Assets\PrizmLib\Scripts\SocketToJSON.cs" />
+     <Compile Include="Assets\RnM UI 2 for UGUI\Simple Sprite Packer\Scripts\SPAction.cs" />
+     <Compile Include="Assets\RnM UI 2 for UGUI\Simple Sprite Packer\Scripts\SPActionType.cs" />
+     <Compile Include="Assets\RnM UI 2 for UGUI\Simple Sprite Packer\Scripts\SPInstance.cs" />
+     <Compile Include="Assets\RnM UI 2 for UGUI\Simple Sprite Packer\Scripts\SPSpriteInfo.cs" />
+     <Compile Include="Assets\RnM UI 2 for UGUI\Simple Sprite Packer\Scripts\UITexturePacker.cs" />
+     <Compile Include="Assets\TouchScript\Examples\General\2D - Double Tap\Scripts\DoubleTap_Sprite.cs" />
+     <Compile Include="Assets\TouchScript\Examples\General\Hierarchy\Scripts\Heirarchy_Button.cs" />
+     <Compile Include="Assets\TouchScript\Examples\General\Hierarchy\Scripts\Heirarchy_Panel.cs" />
+     <Compile Include="Assets\TouchScript\Examples\General\Input\Scripts\InputExample.cs" />
+     <Compile Include="Assets\TouchScript\Examples\General\Input\Scripts\InputExample_Ball.cs" />
+     <Compile Include="Assets\TouchScript\Examples\General\Layers\Scripts\Layers_Sprite.cs" />
+     <Compile Include="Assets\TouchScript\Examples\General\LongPress\Scripts\LongPress_Button.cs" />
+     <Compile Include="Assets\TouchScript\Examples\General\Pan\Scripts\Pan_Button.cs" />
+     <Compile Include="Assets\TouchScript\Examples\General\Pan\Scripts\Pan_Object.cs" />
+     <Compile Include="Assets\TouchScript\Examples\General\Tap\Scripts\Tap_Breaker.cs" />
+     <Compile Include="Assets\TouchScript\Examples\General\Tap\Scripts\Tap_Spawner.cs" />
+     <Compile Include="Assets\TouchScript\Examples\Windows8\Tags\Scripts\DelegateTest.cs" />
+     <Compile Include="Assets\TouchScript\Examples\_misc\Scripts\Example.cs" />
+     <Compile Include="Assets\TouchScript\Examples\_misc\Scripts\Examples.cs" />
+     <Compile Include="Assets\_Scripts\ActionProperties.cs" />
+     <Compile Include="Assets\_Scripts\Actor.cs" />
+     <Compile Include="Assets\_Scripts\ActorManager.cs" />
+     <Compile Include="Assets\_Scripts\AuraBehavior.cs" />
+     <Compile Include="Assets\_Scripts\CameraShake.cs" />
+     <Compile Include="Assets\_Scripts\CreateWall.cs" />
+     <Compile Include="Assets\_Scripts\DungeonTile.cs" />
+     <Compile Include="Assets\_Scripts\FrostRayScript.cs" />
+     <Compile Include="Assets\_Scripts\GameManager.cs" />
+     <Compile Include="Assets\_Scripts\JSONCommandParser.cs" />
+     <Compile Include="Assets\_Scripts\MassCureWound.cs" />
+     <Compile Include="Assets\_Scripts\MultiScreen_Scripts\Constants.cs" />
+     <Compile Include="Assets\_Scripts\MultiScreen_Scripts\PrizmRecord.cs" />
+     <Compile Include="Assets\_Scripts\MultiScreen_Scripts\PrizmRecordGroup.cs" />
+     <Compile Include="Assets\_Scripts\MultiScreen_Scripts\TabletopInitialization.cs" />
+     <Compile Include="Assets\_Scripts\MultiScreen_Scripts\selfDestructMessage.cs" />
+     <Compile Include="Assets\_Scripts\MultiScreen_Scripts\touchMe.cs" />
+     <Compile Include="Assets\_Scripts\SceneLoader.cs" />
+     <Compile Include="Assets\_Scripts\ScorchingRay.cs" />
+     <Compile Include="Assets\_Scripts\TileManager.cs" />
+     <Compile Include="Assets\_Scripts\acidBreath.cs" />
+     <Compile Include="Assets\_Scripts\arrow.cs" />
+     <Compile Include="Assets\_Scripts\axeMelee.cs" />
+     <Compile Include="Assets\_Scripts\axeRanged.cs" />
+     <Compile Include="Assets\_Scripts\bite.cs" />
+     <Compile Include="Assets\_Scripts\closeGame.cs" />
+     <Compile Include="Assets\_Scripts\coneOfCold.cs" />
+     <Compile Include="Assets\_Scripts\destroyOnContact.cs" />
+     <Compile Include="Assets\_Scripts\dualSwords.cs" />
+     <Compile Include="Assets\_Scripts\fireball.cs" />
+     <Compile Include="Assets\_Scripts\hammer.cs" />
+     <Compile Include="Assets\_Scripts\heal.cs" />
+     <Compile Include="Assets\_Scripts\magicMissile.cs" />
+     <Compile Include="Assets\_Scripts\socketDataDump.cs" />
+     <Compile Include="Assets\unity-socket.io-master\SocketIO\JSONObject\JSONObject.cs" />
+     <Compile Include="Assets\unity-socket.io-master\SocketIO\JSONObject\JSONTemplates.cs" />
+     <Compile Include="Assets\unity-socket.io-master\SocketIO\JSONObject\VectorTemplates.cs" />
+     <Compile Include="Assets\unity-socket.io-master\SocketIO\Scripts\SocketIO\Ack.cs" />
+     <Compile Include="Assets\unity-socket.io-master\SocketIO\Scripts\SocketIO\Decoder.cs" />
+     <Compile Include="Assets\unity-socket.io-master\SocketIO\Scripts\SocketIO\Encoder.cs" />
+     <Compile Include="Assets\unity-socket.io-master\SocketIO\Scripts\SocketIO\EnginePacketType.cs" />
+     <Compile Include="Assets\unity-socket.io-master\SocketIO\Scripts\SocketIO\Packet.cs" />
+     <Compile Include="Assets\unity-socket.io-master\SocketIO\Scripts\SocketIO\Parser.cs" />
+     <Compile Include="Assets\unity-socket.io-master\SocketIO\Scripts\SocketIO\SocketIOComponent.cs" />
+     <Compile Include="Assets\unity-socket.io-master\SocketIO\Scripts\SocketIO\SocketIOEvent.cs" />
+     <Compile Include="Assets\unity-socket.io-master\SocketIO\Scripts\SocketIO\SocketIOException.cs" />
+     <Compile Include="Assets\unity-socket.io-master\SocketIO\Scripts\SocketIO\SocketPacketType.cs" />
+     <Compile Include="Assets\unity-socket.io-master\SocketIO\Scripts\Test\TestSocketIO.cs" />
+     <Compile Include="Assets\unity-socket.io-master\SocketIO\WebsocketSharp\AssemblyInfo.cs" />
+     <Compile Include="Assets\unity-socket.io-master\SocketIO\WebsocketSharp\ByteOrder.cs" />
+     <Compile Include="Assets\unity-socket.io-master\SocketIO\WebsocketSharp\CloseEventArgs.cs" />
+     <Compile Include="Assets\unity-socket.io-master\SocketIO\WebsocketSharp\CloseStatusCode.cs" />
+     <Compile Include="Assets\unity-socket.io-master\SocketIO\WebsocketSharp\CompressionMethod.cs" />
+     <Compile Include="Assets\unity-socket.io-master\SocketIO\WebsocketSharp\ErrorEventArgs.cs" />
+     <Compile Include="Assets\unity-socket.io-master\SocketIO\WebsocketSharp\Ext.cs" />
+     <Compile Include="Assets\unity-socket.io-master\SocketIO\WebsocketSharp\Fin.cs" />
+     <Compile Include="Assets\unity-socket.io-master\SocketIO\WebsocketSharp\HandshakeBase.cs" />
+     <Compile Include="Assets\unity-socket.io-master\SocketIO\WebsocketSharp\HandshakeRequest.cs" />
+     <Compile Include="Assets\unity-socket.io-master\SocketIO\WebsocketSharp\HandshakeResponse.cs" />
+     <Compile Include="Assets\unity-socket.io-master\SocketIO\WebsocketSharp\LogData.cs" />
+     <Compile Include="Assets\unity-socket.io-master\SocketIO\WebsocketSharp\LogLevel.cs" />
+     <Compile Include="Assets\unity-socket.io-master\SocketIO\WebsocketSharp\Logger.cs" />
+     <Compile Include="Assets\unity-socket.io-master\SocketIO\WebsocketSharp\Mask.cs" />
+     <Compile Include="Assets\unity-socket.io-master\SocketIO\WebsocketSharp\MessageEventArgs.cs" />
+     <Compile Include="Assets\unity-socket.io-master\SocketIO\WebsocketSharp\Net\AuthenticationBase.cs" />
+     <Compile Include="Assets\unity-socket.io-master\SocketIO\WebsocketSharp\Net\AuthenticationChallenge.cs" />
+     <Compile Include="Assets\unity-socket.io-master\SocketIO\WebsocketSharp\Net\AuthenticationResponse.cs" />
+     <Compile Include="Assets\unity-socket.io-master\SocketIO\WebsocketSharp\Net\AuthenticationSchemes.cs" />
+     <Compile Include="Assets\unity-socket.io-master\SocketIO\WebsocketSharp\Net\Chunk.cs" />
+     <Compile Include="Assets\unity-socket.io-master\SocketIO\WebsocketSharp\Net\ChunkStream.cs" />
+     <Compile Include="Assets\unity-socket.io-master\SocketIO\WebsocketSharp\Net\ChunkedRequestStream.cs" />
+     <Compile Include="Assets\unity-socket.io-master\SocketIO\WebsocketSharp\Net\Cookie.cs" />
+     <Compile Include="Assets\unity-socket.io-master\SocketIO\WebsocketSharp\Net\CookieCollection.cs" />
+     <Compile Include="Assets\unity-socket.io-master\SocketIO\WebsocketSharp\Net\CookieException.cs" />
+     <Compile Include="Assets\unity-socket.io-master\SocketIO\WebsocketSharp\Net\EndPointListener.cs" />
+     <Compile Include="Assets\unity-socket.io-master\SocketIO\WebsocketSharp\Net\EndPointManager.cs" />
+     <Compile Include="Assets\unity-socket.io-master\SocketIO\WebsocketSharp\Net\HttpBasicIdentity.cs" />
+     <Compile Include="Assets\unity-socket.io-master\SocketIO\WebsocketSharp\Net\HttpConnection.cs" />
+     <Compile Include="Assets\unity-socket.io-master\SocketIO\WebsocketSharp\Net\HttpDigestIdentity.cs" />
+     <Compile Include="Assets\unity-socket.io-master\SocketIO\WebsocketSharp\Net\HttpHeaderInfo.cs" />
+     <Compile Include="Assets\unity-socket.io-master\SocketIO\WebsocketSharp\Net\HttpHeaderType.cs" />
+     <Compile Include="Assets\unity-socket.io-master\SocketIO\WebsocketSharp\Net\HttpListener.cs" />
+     <Compile Include="Assets\unity-socket.io-master\SocketIO\WebsocketSharp\Net\HttpListenerContext.cs" />
+     <Compile Include="Assets\unity-socket.io-master\SocketIO\WebsocketSharp\Net\HttpListenerException.cs" />
+     <Compile Include="Assets\unity-socket.io-master\SocketIO\WebsocketSharp\Net\HttpListenerPrefixCollection.cs" />
+     <Compile Include="Assets\unity-socket.io-master\SocketIO\WebsocketSharp\Net\HttpListenerRequest.cs" />
+     <Compile Include="Assets\unity-socket.io-master\SocketIO\WebsocketSharp\Net\HttpListenerResponse.cs" />
+     <Compile Include="Assets\unity-socket.io-master\SocketIO\WebsocketSharp\Net\HttpStatusCode.cs" />
+     <Compile Include="Assets\unity-socket.io-master\SocketIO\WebsocketSharp\Net\HttpStreamAsyncResult.cs" />
+     <Compile Include="Assets\unity-socket.io-master\SocketIO\WebsocketSharp\Net\HttpUtility.cs" />
+     <Compile Include="Assets\unity-socket.io-master\SocketIO\WebsocketSharp\Net\HttpVersion.cs" />
+     <Compile Include="Assets\unity-socket.io-master\SocketIO\WebsocketSharp\Net\InputChunkState.cs" />
+     <Compile Include="Assets\unity-socket.io-master\SocketIO\WebsocketSharp\Net\InputState.cs" />
+     <Compile Include="Assets\unity-socket.io-master\SocketIO\WebsocketSharp\Net\LineState.cs" />
+     <Compile Include="Assets\unity-socket.io-master\SocketIO\WebsocketSharp\Net\ListenerAsyncResult.cs" />
+     <Compile Include="Assets\unity-socket.io-master\SocketIO\WebsocketSharp\Net\ListenerPrefix.cs" />
+     <Compile Include="Assets\unity-socket.io-master\SocketIO\WebsocketSharp\Net\NetworkCredential.cs" />
+     <Compile Include="Assets\unity-socket.io-master\SocketIO\WebsocketSharp\Net\QueryStringCollection.cs" />
+     <Compile Include="Assets\unity-socket.io-master\SocketIO\WebsocketSharp\Net\ReadBufferState.cs" />
+     <Compile Include="Assets\unity-socket.io-master\SocketIO\WebsocketSharp\Net\RequestStream.cs" />
+     <Compile Include="Assets\unity-socket.io-master\SocketIO\WebsocketSharp\Net\ResponseStream.cs" />
+     <Compile Include="Assets\unity-socket.io-master\SocketIO\WebsocketSharp\Net\Security\SslStream.cs" />
+     <Compile Include="Assets\unity-socket.io-master\SocketIO\WebsocketSharp\Net\WebHeaderCollection.cs" />
+     <Compile Include="Assets\unity-socket.io-master\SocketIO\WebsocketSharp\Net\WebSockets\HttpListenerWebSocketContext.cs" />
+     <Compile Include="Assets\unity-socket.io-master\SocketIO\WebsocketSharp\Net\WebSockets\TcpListenerWebSocketContext.cs" />
+     <Compile Include="Assets\unity-socket.io-master\SocketIO\WebsocketSharp\Net\WebSockets\WebSocketContext.cs" />
+     <Compile Include="Assets\unity-socket.io-master\SocketIO\WebsocketSharp\Opcode.cs" />
+     <Compile Include="Assets\unity-socket.io-master\SocketIO\WebsocketSharp\PayloadData.cs" />
+     <Compile Include="Assets\unity-socket.io-master\SocketIO\WebsocketSharp\Rsv.cs" />
+     <Compile Include="Assets\unity-socket.io-master\SocketIO\WebsocketSharp\WebSocket.cs" />
+     <Compile Include="Assets\unity-socket.io-master\SocketIO\WebsocketSharp\WebSocketException.cs" />
+     <Compile Include="Assets\unity-socket.io-master\SocketIO\WebsocketSharp\WebSocketFrame.cs" />
+     <Compile Include="Assets\unity-socket.io-master\SocketIO\WebsocketSharp\WebSocketState.cs" />
+     <Compile Include="Assets\unity-socket.io-master\SocketIO\WebsocketSharp\WebSocketStream.cs" />
+     <None Include="Assets\ImportedAssets\Realistic Effects Pack\Shaders\IceVert.shader" />
+     <None Include="Assets\ImportedAssets\Realistic Effects Pack\Shaders\GlowAdditive.shader" />
+     <None Include="Assets\TouchScript\Shaders\DebugDepthTest.shader" />
+     <None Include="Assets\ImportedAssets\Realistic Effects Pack\Shaders\Matrix\Additive.shader" />
+     <None Include="Assets\ImportedAssets\Realistic Effects Pack\Readme 1.txt" />
+     <None Include="Assets\ImportedAssets\Realistic Effects Pack\Shaders\Mobile\Distortion\DistortionCullOff.shader" />
+     <None Include="Assets\unity-socket.io-master\SocketIO\JSONObject\readme.txt" />
+     <None Include="Assets\ImportedAssets\Realistic Effects Pack\Shaders\ParticleAddNoSmooth.shader" />
+     <None Include="Assets\ImportedAssets\Realistic Effects Pack\Shaders\Mobile\Water.shader" />
+     <None Include="Assets\ImportedAssets\Realistic Effects Pack\Shaders\Distortion\Free\FreeDistortionCullBack.shader" />
+     <None Include="Assets\RnM UI 2 for UGUI\Readme.txt" />
+     <None Include="Assets\ImportedAssets\Realistic Effects Pack\Shaders\Particles.shader" />
+     <None Include="Assets\ImportedAssets\Realistic Effects Pack\Shaders\Water 1.shader" />
+     <None Include="Assets\ImportedAssets\Realistic Effects Pack\Shaders\Mobile\Distortion\DistortionCutOutBack.shader" />
+     <None Include="Assets\ImportedAssets\Realistic Effects Pack\Shaders\IceShaderDistortion.shader" />
+     <None Include="Assets\Plugins\Android\AndroidManifest.xml" />
+     <None Include="Assets\ImportedAssets\Realistic Effects Pack\Shaders\Water.shader" />
+     <None Include="Assets\ImportedAssets\Realistic Effects Pack\Readme.txt" />
+     <None Include="Assets\ImportedAssets\Realistic Effects Pack\Shaders\Distortion\Distortion.shader" />
+     <None Include="Assets\ImportedAssets\_MOBA and Tower Defense\info.txt" />
+     <None Include="Assets\ImportedAssets\Realistic Effects Pack\Shaders\Distortion\DistortionParticlesCutout.shader" />
+     <None Include="Assets\ImportedAssets\Realistic Effects Pack\Shaders\DiffuseRimSpecular.shader" />
+     <None Include="Assets\ImportedAssets\Realistic Effects Pack\Shaders\Distortion\DistortionCullBack+1.shader" />
+     <None Include="Assets\ImportedAssets\Realistic Effects Pack\Shaders\AlphaBlended.shader" />
+     <None Include="Assets\ImportedAssets\Realistic Effects Pack\Shaders\Matrix\GlowAdditive.shader" />
+     <None Include="Assets\ImportedAssets\Realistic Effects Pack\Shaders\Rim.shader" />
+     <None Include="Assets\TouchScript\Shaders\DebugMultiplyDepthTest.shader" />
+     <None Include="Assets\ImportedAssets\Realistic Effects Pack\Shaders\AlphaBlendedNoSmooth.shader" />
+     <None Include="Assets\ImportedAssets\Realistic Effects Pack\Shaders\Distortion\Free\FreeDistortionCutOut.shader" />
+     <None Include="Assets\ImportedAssets\Realistic Effects Pack\Shaders\GlowAdditiveTwoColor.shader" />
+     <None Include="Assets\ImportedAssets\Realistic Effects Pack\Shaders\Explosion.shader" />
+     <None Include="Assets\ImportedAssets\Realistic Effects Pack\Shaders\Distortion\Free\FreeDistortionCullOff.shader" />
+     <None Include="Assets\Environment Materials\Terrain Textures\Read Me.txt" />
+     <None Include="Assets\ImportedAssets\Realistic Effects Pack\Shaders\Mobile\Distortion\DistortionParticlesCutout.shader" />
+     <None Include="Assets\ImportedAssets\Realistic Effects Pack\Shaders\DiffuseRim.shader" />
+     <None Include="Assets\ImportedAssets\Realistic Effects Pack\Shaders\Distortion\DistortionCullOff.shader" />
+     <None Include="Assets\TouchScript\Shaders\DebugNoDepthTest.shader" />
+     <None Include="Assets\unity-socket.io-master\readme.txt" />
+     <None Include="Assets\RnM UI 2 for UGUI\Simple Sprite Packer\Changelog.txt" />
+     <None Include="Assets\ImportedAssets\Realistic Effects Pack\Shaders\GlowAdditiveRGB.shader" />
+     <None Include="Assets\ImportedAssets\Realistic Effects Pack\Shaders\MultiplyDouble.shader" />
+     <None Include="Assets\RnM UI 2 for UGUI\Simple Sprite Packer\readme.txt" />
+     <None Include="Assets\RnM UI 2 for UGUI\Shaders\UIOverlay.shader" />
+     <None Include="Assets\RnM UI 2 for UGUI\Changelog.txt" />
+     <None Include="Assets\ImportedAssets\Realistic Effects Pack\Shaders\Projectors\ProjectorAdditive.shader" />
+     <None Include="Assets\ImportedAssets\Realistic Effects Pack\Shaders\Distortion\DistortionParticles.shader" />
+     <None Include="Assets\ImportedAssets\Realistic Effects Pack\Shaders\SlimeCutOut.shader" />
+     <None Include="Assets\ImportedAssets\Realistic Effects Pack\Shaders\Mobile\Distortion\Distortion.shader" />
+     <None Include="Assets\ImportedAssets\Realistic Effects Pack\Shaders\Mobile\IceVert.shader" />
+     <None Include="Assets\ImportedAssets\Realistic Effects Pack\Shaders\Explosion2.shader" />
+     <None Include="Assets\ImportedAssets\Realistic Effects Pack\Shaders\Distortion\DistortionCutOutBack.shader" />
+     <None Include="Assets\ImportedAssets\Realistic Effects Pack\Shaders\Mobile\Distortion\DistortionCutOut.shader" />
+     <None Include="Assets\ImportedAssets\Realistic Effects Pack\Shaders\Ice.shader" />
+     <None Include="Assets\ImportedAssets\Realistic Effects Pack\Shaders\Matrix\GlowAdditiveSimple.shader" />
+     <None Include="Assets\TouchScript\Shaders\DebugMultiplyNoDepthTest.shader" />
+     <None Include="Assets\ImportedAssets\Realistic Effects Pack\Shaders\Distortion\DistortionCutOut.shader" />
+     <None Include="Assets\ImportedAssets\Realistic Effects Pack\Shaders\IceShaderFastSimple.shader" />
+     <None Include="Assets\ImportedAssets\Realistic Effects Pack\Shaders\Dissolve.shader" />
+     <None Include="Assets\ImportedAssets\Realistic Effects Pack\Shaders\Mobile\IceShaderDistortion.shader" />
+     <None Include="Assets\ImportedAssets\Realistic Effects Pack\Shaders\Mobile\Distortion\DistortionCullBack+1.shader" />
+     <None Include="Assets\ImportedAssets\Realistic Effects Pack\Shaders\Mobile\SlimeCutOut.shader" />
+     <None Include="Assets\KunaiEditor\Editor\Readme.txt" />
+     <None Include="Assets\ImportedAssets\Realistic Effects Pack\Shaders\GlowAdditiveSimple.shader" />
+     <None Include="Assets\ImportedAssets\Realistic Effects Pack\Shaders\Mobile\Distortion\DistortionParticles.shader" />
+     <None Include="Assets\ImportedAssets\Realistic Effects Pack\Shaders\Projectors\ProjectorBlended.shader" />
+     <None Include="Assets\unity-socket.io-master\SocketIO\readme.txt" />
+     <None Include="Assets\ImportedAssets\Realistic Effects Pack\Shaders\WaterFree.shader" />
+ <Reference Include="UnityEngine.UI">
+ <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEngine.Networking">
+ <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/Networking/UnityEngine.Networking.dll</HintPath>
+ </Reference>
+ <Reference Include="ICSharpCode.SharpZipLib">
+ <HintPath>C:/Users/Danny.danny/Dropbox/Danny - Personal/DungeonsAndDragons/Assets/Plugins/ICSharpCode.SharpZipLib.dll</HintPath>
+ </Reference>
+ <Reference Include="JsonFx">
+ <HintPath>C:/Users/Danny.danny/Dropbox/Danny - Personal/DungeonsAndDragons/Assets/Plugins/JsonFx.dll</HintPath>
+ </Reference>
+ <Reference Include="TouchScript">
+ <HintPath>C:/Users/Danny.danny/Dropbox/Danny - Personal/DungeonsAndDragons/Assets/TouchScript/Plugins/TouchScript.dll</HintPath>
+ </Reference>
+ <Reference Include="TouchScript.Windows">
+ <HintPath>C:/Users/Danny.danny/Dropbox/Danny - Personal/DungeonsAndDragons/Assets/TouchScript/Plugins/TouchScript.Windows.dll</HintPath>
+ </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="Assembly-CSharp-firstpass.csproj">
+      <Project>{C09ED6B7-4090-7861-D5F0-F4948AA90085}</Project>      <Name>Assembly-CSharp-firstpass</Name>    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+  
+</Project>
